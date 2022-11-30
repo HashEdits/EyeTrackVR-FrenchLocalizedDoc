@@ -1,7 +1,6 @@
 import logo from '@assets/images/eyeTrackVrLogoGif.png'
-import vector1 from '@assets/images/vector1.svg'
 import { CameraStatusIndicator, ActiveStatus } from '@components/CameraStatus'
-import { faGear } from '@fortawesome/free-solid-svg-icons'
+import { faArrowsRotate, faGear } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Menu } from '@headlessui/react'
 import React from 'react'
@@ -23,9 +22,9 @@ const CameraHeader = (props: ICameraDetails & ICameraStatus) => {
     <div className="flex flex-row justify-between items-center">
       <CameraStatusIndicator activeStatus={props.activeStatus} />
       <span className="text-white"> {props.cameraLabel} </span>
-      <div className="mr-2 pt-3">
+      <div className="flex flex-col mr-2 pt-3 mb-1">
         <FontAwesomeIcon size="lg" color='white' className="gear pb-1" icon={faGear} />
-        <img className="mb-1" alt="" src={vector1} />
+        <FontAwesomeIcon size="lg" color='white' className="gear pb-1" icon={faArrowsRotate} />
       </div>
     </div>
   )
