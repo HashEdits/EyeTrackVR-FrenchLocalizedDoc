@@ -1,3 +1,4 @@
+import logo from '@assets/images/eyeTrackVrLogoGif.png'
 import vector1 from '@assets/images/vector1.svg'
 import { CameraStatusIndicator, ActiveStatus } from '@components/CameraStatus'
 import { faGear } from '@fortawesome/free-solid-svg-icons'
@@ -6,6 +7,7 @@ import { Menu } from '@headlessui/react'
 import React from 'react'
 import type { ICameraStatus } from '@components/CameraStatus'
 
+// TODO: add tailwindcss media queries to make this responsive
 interface ICameraProps {
   cameraType?: boolean
   cameraAddress?: string
@@ -30,13 +32,17 @@ const CameraHeader = (props: ICameraDetails & ICameraStatus) => {
 
 const CameraDetails = (props: ICameraDetails & ICameraStatus) => {
   return (
-    <div className="flex justify-end leading-6 text-sm pr-2 pt-2 pb-2">
+    <div className="flex justify-around leading-6 text-sm pr-2 pt-2 pb-2">
+      <div>
+        <img src={logo} className="w-[100px] h-[100px] items-center justify-center" alt="" />
+      </div>
       <div className="grow-[100px]">
         <div className="flex justify-between">
           Camera address: <span className="pl-2 text-white"> {props.cameraAddress} </span>
         </div>
         <div className="flex justify-between">
-          Camera type: <span className="text-white"> {props.cameraType ? 'Wired' : 'Wireless'} </span>
+          Camera type:{' '}
+          <span className="text-white"> {props.cameraType ? 'Wired' : 'Wireless'} </span>
         </div>
         <div className="flex justify-between">
           Status:
