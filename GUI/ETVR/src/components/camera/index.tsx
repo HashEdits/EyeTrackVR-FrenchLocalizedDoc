@@ -7,12 +7,12 @@ import React from 'react'
 import type { ICameraStatus } from '@components/CameraStatus'
 
 interface ICameraProps {
-  cameraType: boolean
-  cameraAddress: string
+  cameraType?: boolean
+  cameraAddress?: string
 }
 
 interface ICameraDetails extends ICameraProps {
-  cameraLabel: string
+  cameraLabel?: string
 }
 
 const CameraHeader = (props: ICameraDetails & ICameraStatus) => {
@@ -28,7 +28,7 @@ const CameraHeader = (props: ICameraDetails & ICameraStatus) => {
   )
 }
 
-const CameraDetails = (props: ICameraProps & ICameraStatus) => {
+const CameraDetails = (props: ICameraDetails & ICameraStatus) => {
   return (
     <div className="flex justify-center leading-6 text-sm pt-2">
       <div className="grow-[100px]">
@@ -40,14 +40,16 @@ const CameraDetails = (props: ICameraProps & ICameraStatus) => {
         </div>
         <div className="flex justify-between">
           Status:
-          <span className={`text-[${ActiveStatus(props.activeStatus)}]`}>{props.activeStatus}</span>
+          <span className="" style={{ color: ActiveStatus(props.activeStatus) }}>
+            {props.activeStatus}
+          </span>
         </div>
       </div>
     </div>
   )
 }
 
-const CameraContainer = (props: ICameraProps & ICameraStatus) => {
+const CameraContainer = (props: ICameraDetails & ICameraStatus) => {
   return (
     <div className="pb-[5rem] h-[100%] xl:pb-[1rem] grow flex-row pt-6 py-6 px-8">
       <Menu as="div" className="h-[100%]">

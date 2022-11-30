@@ -11,7 +11,7 @@ const Main = () => {
   return (
     <div>
       <CameraContainer
-        activeStatus={CameraStatus.inactive}
+        activeStatus={"active"}
         cameraType={true}
         cameraAddress="192.168.0.204"
         cameraLabel="Left Eye"
