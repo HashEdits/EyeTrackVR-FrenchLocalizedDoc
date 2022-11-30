@@ -51,9 +51,7 @@ pub async fn run_query(
         .expect("Failed to create daemon. Please install Bonjour on your system");
     //* Browse for a service type.
     service_type.push_str(".local.");
-    let receiver = mdns
-        .browse(&service_type)
-        .map_err(|e| e.to_string())?;
+    let receiver = mdns.browse(&service_type).map_err(|e| e.to_string())?;
     let now = std::time::Instant::now();
     //* listen for event then stop the event loop after 5 seconds.
     // while let Ok(event) = receiver.recv() {}
@@ -161,7 +159,7 @@ pub fn get_urls(instance: &Mdns) -> Vec<String> {
     urls
 }
 
-pub async fn generate_json(instance: &Mdns) -> Result<(), Box<dyn std::error::Error>> {
+pub async fn generate_json(instance: &Mdns) -> Result<String, Box<dyn std::error::Error>> {
     let data = get_urls(instance);
     //let mut json: serde_json::Value = serde_json::from_str("{}").unwrap();
     let mut json: Option<serde_json::Value> = None;
@@ -191,6 +189,6 @@ pub async fn generate_json(instance: &Mdns) -> Result<(), Box<dyn std::error::Er
     info!("{:?}", config);
     // write the json object to a file
     let to_string_json = serde_json::to_string_pretty(&config)?;
-    tokio::fs::write("config/config.json", to_string_json).await?;
-    Ok(())
+    // return the json object as a string
+    Ok(to_string_json)
 }

@@ -41,7 +41,7 @@ async fn get_user() -> Result<String, String> {
 /// - `service_type` The service type to query for
 /// - `scan_time` The number of seconds to query for
 #[tauri::command]
-async fn run_mdns_query(service_type: String, scan_time: u64) -> Result<(), String> {
+async fn run_mdns_query(service_type: String, scan_time: u64) -> Result<String, String> {
     info!("Starting MDNS query to find devices");
     let base_url = Arc::new(Mutex::new(HashMap::new()));
     let thread_arc = base_url.clone();
@@ -59,10 +59,13 @@ async fn run_mdns_query(service_type: String, scan_time: u64) -> Result<(), Stri
         "MDNS query results: {:#?}",
         m_dnsquery::get_urls(&*ref_mdns)
     ); // get's an array of the base urls found
-    m_dnsquery::generate_json(&*ref_mdns)
+    let json = m_dnsquery::generate_json(&*ref_mdns)
         .await
-        .expect("Failed to generate JSON file"); // generates a json file with the base urls found
-    Ok(())
+        .expect("Failed to generate JSON file"); // generates a json file with the base urls foundµ
+                                                 //tokio::fs::write("config/config.json", json)
+                                                 //    .await
+                                                 //    .expect("Failed to write JSON file");
+    Ok(json)
 }
 
 #[tauri::command]

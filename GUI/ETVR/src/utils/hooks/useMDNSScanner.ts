@@ -35,6 +35,7 @@ export const useMDNSScanner = (serviceType: string, scanTime: number) => {
         if (typeof response === 'string') {
           const parsedResponse = JSON.parse(response)
           setRes(parsedResponse)
+          console.log(parsedResponse)
         }
       })
       .catch((err) => {

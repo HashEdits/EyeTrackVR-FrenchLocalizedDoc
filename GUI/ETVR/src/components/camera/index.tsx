@@ -1,6 +1,7 @@
 import logo from '/images/logo.png'
 import { CameraStatusIndicator, ActiveStatus } from '@components/CameraStatus'
 import { faArrowsRotate, faGear } from '@fortawesome/free-solid-svg-icons'
+import { useMDNSScanner } from '@src/utils/hooks/useMDNSScanner'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Menu } from '@headlessui/react'
 import React from 'react'
@@ -8,9 +9,11 @@ import type { ICameraStatus } from '@components/CameraStatus'
 
 // TODO: add tailwindcss media queries to make this responsive
 // TODO: add camera feed status indicator and preview
+
 interface ICameraProps {
   cameraType?: boolean
   cameraAddress?: string
+  mDNSScan?(): () => void
 }
 
 interface ICameraDetails extends ICameraProps {
@@ -24,7 +27,13 @@ const CameraHeader = (props: ICameraDetails & ICameraStatus) => {
       <span className="text-white"> {props.cameraLabel} </span>
       <div className="flex flex-col mr-2 pt-3 mb-1">
         <FontAwesomeIcon size="lg" color="white" className="pb-1" icon={faGear} />
-        <FontAwesomeIcon size="lg" color="white" className="pb-1" icon={faArrowsRotate} />
+        <FontAwesomeIcon
+          onClick={() => console.log('rotate')}
+          size="lg"
+          color="white"
+          className="pb-1"
+          icon={faArrowsRotate}
+        />
       </div>
     </div>
   )
