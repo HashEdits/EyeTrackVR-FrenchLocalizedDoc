@@ -16,7 +16,7 @@ const Logo = () => {
       <img
         src={etvrLogo}
         alt="eytrackvrlogo"
-        className="bg-gray-800 hover:bg-gray-900 rounded-full focus:bg-gray-900 transition duration-200 ease-in focus:shadow-inner w-[90px] mr-[42.13px] shadow-lg"
+        className="bg-gray-800 hover:bg-black rounded-full focus:bg-black transition duration-200 ease-in focus:shadow-inner w-[90px] mr-[42.13px] shadow-lg"
       />
     </Link>
   )
@@ -30,14 +30,14 @@ const NavBar = () => {
           <Tooltip tooltip="Tracker Manager">
             <Link
               to={'/cameras'}
-              className="ml-[1.25rem] rounded-[8px] pt-[.2rem] pb-[.2rem] pl-[1.25rem] pr-[1.25rem] hover:bg-[#252536]">
+              className="icon ml-[1.25rem] rounded-[8px] pt-[.2rem] pb-[.2rem] pl-[1.25rem] pr-[1.25rem] focus:bg-[#252536] hover:bg-[#252536]">
               <FontAwesomeIcon size="xl" icon={faCamera} />
             </Link>
           </Tooltip>
           <Tooltip tooltip="Settings">
             <Link
               to={'/settings'}
-              className="ml-[1.25rem] mr-[1.25rem] rounded-[8px] pt-[.2rem] pb-[.2rem] pl-[1.25rem] pr-[1.25rem] hover:bg-[#252536]">
+              className="icon ml-[1.25rem] mr-[1.25rem] rounded-[8px] pt-[.2rem] pb-[.2rem] pl-[1.25rem] pr-[1.25rem] focus:bg-[#252536] hover:bg-[#252536]">
               <FontAwesomeIcon size="xl" icon={faGear} />
             </Link>
           </Tooltip>

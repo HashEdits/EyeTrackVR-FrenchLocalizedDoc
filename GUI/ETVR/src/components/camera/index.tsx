@@ -8,6 +8,7 @@ import React from 'react'
 import type { ICameraStatus } from '@components/CameraStatus'
 
 // TODO: add tailwindcss media queries to make this responsive
+// TODO: add camera feed status indicator and preview
 interface ICameraProps {
   cameraType?: boolean
   cameraAddress?: string
@@ -23,7 +24,7 @@ const CameraHeader = (props: ICameraDetails & ICameraStatus) => {
       <CameraStatusIndicator activeStatus={props.activeStatus} />
       <span className="text-white"> {props.cameraLabel} </span>
       <div className="mr-2 pt-3">
-        <FontAwesomeIcon className="gear pb-1" icon={faGear} />
+        <FontAwesomeIcon size="lg" color='white' className="gear pb-1" icon={faGear} />
         <img className="mb-1" alt="" src={vector1} />
       </div>
     </div>

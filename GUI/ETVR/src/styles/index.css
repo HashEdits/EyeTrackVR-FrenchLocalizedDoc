@@ -27,6 +27,14 @@
     -moz-text-fill-color: transparent;
   }
 
+  .icon:hover svg path {
+    fill: #fff;
+  }
+
+  .icon:focus svg path {
+    fill: #fff;
+  }
+
   @media screen and (min-width: 768px) {
     .nav-text:hover {
       background-color: theme('colors.blue.300');
