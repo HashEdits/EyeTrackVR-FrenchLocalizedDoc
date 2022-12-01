@@ -21,6 +21,7 @@ pub type MdnsMap = Arc<Mutex<HashMap<String, String>>>; // Arc<Mutex<HashMap<Str
 pub struct Mdns {
     pub base_url: MdnsMap,
     pub names: Vec<String>,
+    pub ip: Vec<String>,
 }
 
 /// Runs a mDNS query for X seconds
@@ -72,7 +73,7 @@ pub async fn run_query(
                     let name = info.get_hostname();
                     info!("Service name: {}", name);
                     //* remove the period at the end of the name
-                    let name = name.trim_end_matches('.');
+                    let mut name = name.trim_end_matches('.');
                     //* append name to 'http://' to get the base url
                     let mut base_url = String::from("http://");
                     base_url.push_str(name);
@@ -83,7 +84,14 @@ pub async fn run_query(
                         .lock()
                         .map_err(|e| e.to_string())?
                         .insert(name.to_string(), base_url);
+                    //* remove the `.local` from the name
+                    name = name.trim_end_matches(".local");
                     instance.names.push(name.to_string());
+                    let ip = info.get_addresses();
+                    // grab the ip adress' from the hashset and add them to the vector
+                    for i in ip {
+                        instance.ip.push(i.to_string());
+                    }
                 }
                 other_event => {
                     info!(
@@ -166,7 +174,7 @@ pub async fn generate_json(instance: &Mdns) -> Result<String, Box<dyn std::error
     // create a data iterator
     for (i, url) in data.iter().enumerate() {
         json = Some(serde_json::json!({
-            "names": [instance.names[i].to_string()],
+            "ips": [instance.ip[i].to_string()],
             "urls": {
                 instance.names[i].to_string(): url.to_string()
             },

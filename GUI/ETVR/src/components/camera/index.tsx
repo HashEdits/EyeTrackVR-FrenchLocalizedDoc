@@ -1,7 +1,6 @@
 import logo from '/images/logo.png'
 import { CameraStatusIndicator, ActiveStatus } from '@components/CameraStatus'
 import { faArrowsRotate, faGear } from '@fortawesome/free-solid-svg-icons'
-import { useMDNSScanner } from '@src/utils/hooks/useMDNSScanner'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Menu } from '@headlessui/react'
 import React from 'react'
@@ -13,7 +12,8 @@ import type { ICameraStatus } from '@components/CameraStatus'
 interface ICameraProps {
   cameraType?: boolean
   cameraAddress?: string
-  mDNSScan?(): () => void
+  className?: string
+  mDNSScan?: () => void
 }
 
 interface ICameraDetails extends ICameraProps {
@@ -28,7 +28,7 @@ const CameraHeader = (props: ICameraDetails & ICameraStatus) => {
       <div className="flex flex-col mr-2 pt-3 mb-1">
         <FontAwesomeIcon size="lg" color="white" className="pb-1" icon={faGear} />
         <FontAwesomeIcon
-          onClick={() => console.log('rotate')}
+          onClick={props.mDNSScan}
           size="lg"
           color="white"
           className="pb-1"
@@ -66,11 +66,15 @@ const CameraDetails = (props: ICameraDetails & ICameraStatus) => {
 
 const CameraContainer = (props: ICameraDetails & ICameraStatus) => {
   return (
-    <div className="pb-[5rem] h-[100%] xl:pb-[1rem] flex-row pt-6 py-6 px-8 max-w-md">
+    <div className={`${props.className}`}>
       <Menu as="div" className="h-[100%]">
         <div className="h-[100%] flex-1 grow rounded-[20px] border-solid border border-black shadow-lg leading-5 font-sans font-medium">
           <div className="h-[100%] flex-1 overflow-auto grow rounded-[20px] bg-[#0f0f0f] text-[#ffffffc4]">
-            <CameraHeader cameraLabel={props.cameraLabel} activeStatus={props.activeStatus} />
+            <CameraHeader
+              mDNSScan={props.mDNSScan}
+              cameraLabel={props.cameraLabel}
+              activeStatus={props.activeStatus}
+            />
             <CameraDetails
               activeStatus={props.activeStatus}
               cameraType={props.cameraType}
