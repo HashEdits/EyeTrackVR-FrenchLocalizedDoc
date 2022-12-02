@@ -31,7 +31,7 @@ export const useRestClient = (endpoint: string, deviceName: string, method: stri
     invoke('do_rest_request', {
       endpoint,
       deviceName,
-      method
+      method,
     })
       .then((response) => {
         if (typeof response === 'string') {
@@ -43,7 +43,8 @@ export const useRestClient = (endpoint: string, deviceName: string, method: stri
       .catch((err) => {
         console.log(err)
         setError(err)
-      }).finally(() => {
+      })
+      .finally(() => {
         setLoading(false)
       })
   }

@@ -11,7 +11,7 @@ export const useMDNSScanner = () => {
     setLoading(true)
     invoke('run_mdns_query', {
       serviceType,
-      scanTime
+      scanTime,
     })
       .then((response) => {
         if (typeof response === 'string') {
@@ -25,7 +25,8 @@ export const useMDNSScanner = () => {
       })
       .catch((err) => {
         setError(err)
-      }).finally(() => {
+      })
+      .finally(() => {
         setLoading(false)
       })
   }
