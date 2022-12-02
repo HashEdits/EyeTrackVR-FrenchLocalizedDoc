@@ -7,6 +7,7 @@ require("storybook-tailwind-foundations/initialize.js").default(
 //* Docs: https://storybook.js.org/docs/react/essentials/controls
 //* Docs: https://storybook.js.org/docs/react/writing-docs/mdx#gatsby-focus-wrapper
 //* Docs: https://storybook.js.org/addons/@storybook/addon-docs
+//* Docs: https://mdxjs.com/blog/v2/
 // NOTE: You must set:  $env:NODE_OPTIONS = "--openssl-legacy-provider" in the VSCode powershell terminal (for windows) to get the MDX to work with Node v18+
 // if you're using linux, you can use the following command:  export NODE_OPTIONS="--openssl-legacy-provider"
 
@@ -26,7 +27,9 @@ module.exports = {
             transcludeMarkdown: true,
         },
     }, "@storybook/addon-links", "@storybook/addon-essentials"],
-
+    features: {
+        previewMdx2: true, // 👈 MDX 2 enabled here
+    },
     framework: "@storybook/react",
     core: {
         builder: "@storybook/builder-vite",
