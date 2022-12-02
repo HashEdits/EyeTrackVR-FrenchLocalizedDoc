@@ -1,0 +1,23 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+
+import CameraContainer from './index'
+
+<Meta title="Camera Container" component={CameraContainer} />
+
+export const Template = (args) => <CameraContainer {...args} />
+
+# CameraContainer
+
+<Canvas>
+  <Story
+    name="Camera Object"
+    args={{
+      activeStatus: 'active',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+
+## Props
