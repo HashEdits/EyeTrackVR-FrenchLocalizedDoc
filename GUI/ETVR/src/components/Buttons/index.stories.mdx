@@ -1,0 +1,27 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import {Button} from './index'
+
+<Meta  title="Buttons/Button"  component={Button} />
+
+export const Template = (args) => <Button {...args} />
+
+# Button
+
+<Canvas>
+  <Story
+    name="Button"
+    args={{
+      text: 'Log',
+      color: '#6f4ca1',
+      shadow: '0 10px 20px -10px rgba(24, 90, 219, 0.6)',
+    }}
+    argTypes={{
+      onClick: { action: 'clicked' },
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Description
+
+## Props

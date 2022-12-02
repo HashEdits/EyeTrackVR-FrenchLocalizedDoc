@@ -13,6 +13,20 @@ export const Template = (args) => <CameraContainer {...args} />
     name="Camera Object"
     args={{
       activeStatus: 'active',
+    }}
+    argTypes={{
+      handleClick: { action: 'clicked' },
+      activeStatus: {
+        options: ['active', 'inactive', 'loading'],
+        control: {
+          type: 'select',
+          labels: {
+            active: 'Active',
+            inactive: 'Inactive',
+            loading: 'Loading',
+          },
+        },
+      },
     }}>
     {Template.bind({})}
   </Story>
