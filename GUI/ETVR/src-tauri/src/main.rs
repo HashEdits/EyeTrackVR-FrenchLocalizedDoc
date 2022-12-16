@@ -4,31 +4,81 @@
     windows_subsystem = "windows"
 )]
 
+#[cfg(target_os = "linux")]
+use std::fs::metadata;
+#[cfg(target_os = "linux")]
+use std::path::PathBuf;
+
 // TODO: Implement REST Client for ETVR
 
 //use tauri::*;
-use tauri::Manager;
-use tauri::{CustomMenuItem, SystemTray, SystemTrayEvent, SystemTrayMenu, SystemTrayMenuItem};
+use tauri::{
+    self, CustomMenuItem, Manager, State, SystemTray, SystemTrayEvent, SystemTrayMenu,
+    SystemTrayMenuItem, SystemTraySubmenu,
+};
 
 // use various crates
 use log::{debug, error, info, warn};
 use serde::{Deserialize, Serialize};
+use tauri_plugin_store;
+use tauri_plugin_window_state;
 use whoami::username;
 //use window_shadows::set_shadow;
 
 // use std
 use std::collections::hash_map::HashMap;
-use std::sync::{Arc, Mutex};
+use std::{
+    ops::Deref,
+    process::Command,
+    sync::{Arc, Mutex},
+    thread,
+    time::Duration,
+};
 
 // use custom modules
 mod modules;
 use modules::{m_dnsquery, rest_client};
+
+#[derive(Clone, Serialize)]
+struct SingleInstancePayload {
+    args: Vec<String>,
+    cwd: String,
+}
+
+#[derive(Clone, Serialize)]
+struct SystemTrayPayload {
+    message: String,
+}
+
 #[derive(Debug, Deserialize, Serialize)]
 struct Config {
     names: Vec<String>,
     urls: Vec<String>,
 }
 
+enum TrayIcon {
+    Filled,
+    Unfilled,
+}
+
+enum TrayState {
+    Visible,
+    Hidden,
+}
+
+/// A function to show the main window
+#[tauri::command]
+fn show_main_window(window: tauri::Window) {
+    window
+        .get_window("main")
+        .expect("Failed to get main window")
+        .show()
+        .unwrap();
+}
+
+/// A command to get the user name from the system
+/// ## Returns
+/// - `user_name`: String - The user name of the current user
 #[tauri::command]
 async fn get_user() -> Result<String, String> {
     let user_name: String = username();
@@ -63,9 +113,9 @@ async fn run_mdns_query(service_type: String, scan_time: u64) -> Result<String, 
     let json = m_dnsquery::generate_json(&*ref_mdns)
         .await
         .expect("Failed to generate JSON object"); // generates a json file with the base urls foundµ
-                                                 //tokio::fs::write("config/config.json", json)
-                                                 //    .await
-                                                 //    .expect("Failed to write JSON file");
+                                                   //tokio::fs::write("config/config.json", json)
+                                                   //    .await
+                                                   //    .expect("Failed to write JSON file");
     Ok(json)
 }
 
@@ -118,8 +168,24 @@ fn main() {
             get_user,
             do_rest_request
         ])
+        // allow only one instance and propgate args and cwd to existing instance
+        .plugin(tauri_plugin_single_instance::init(|app, args, cwd| {
+            app.emit_all("new-instance", Some(SingleInstancePayload { args, cwd }))
+                .unwrap_or_else(|e| {
+                    eprintln!("Failed to emit new-instance event: {}", e);
+                });
+        }))
+        // persistent storage with file system
+        .plugin(tauri_plugin_store::PluginBuilder::default().build())
+        // save window position and size between sessions
+        .plugin(tauri_plugin_window_state::Builder::default().build())
         .setup(|app| {
-            let window = app.get_window("main").expect("failed to get window");
+            let window = app.get_window("main").unwrap_or_else(|| {
+                panic!(
+                    "Failed to get window {}",
+                    "main"
+                )
+            });
             //set_shadow(&window, true).expect("Unsupported platform!");
             window.hide().unwrap();
             Ok(())
@@ -134,12 +200,6 @@ fn main() {
                 dbg!("system tray received a left click");
                 let window = app.get_window("main").expect("failed to get window");
                 window.show().unwrap();
-                /* let logical_size = tauri::LogicalSize::<f64> {
-                    width: 300.0,
-                    height: 400.0,
-                };
-                let logical_s = tauri::Size::Logical(logical_size);
-                window.set_size(logical_s); */
             }
             SystemTrayEvent::RightClick {
                 position: _,
@@ -173,12 +233,4 @@ fn main() {
         })
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
-    /* .build(tauri::generate_context!())*/
-    /* .expect("error while building tauri application") */
-    /* .run(|_app_handle, event| match event {
-        tauri::RunEvent::ExitRequested { api, .. } => {
-            api.prevent_exit();
-        }
-        _ => {}
-    }); */
 }
