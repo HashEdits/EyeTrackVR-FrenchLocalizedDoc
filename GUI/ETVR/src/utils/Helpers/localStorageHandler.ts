@@ -1,4 +1,4 @@
-export default function LocalStorageHandler(key: string, value: unknown) {
+const LocalStorageHandler = (key: string, value: unknown) => {
   // check if local storage is available
   const temp = {
     [key]: value,
@@ -23,3 +23,5 @@ export default function LocalStorageHandler(key: string, value: unknown) {
     }
   }
 }
+
+export default LocalStorageHandler

@@ -20,8 +20,8 @@ use tauri::{
 // use various crates
 use log::{debug, error, info, warn};
 use serde::{Deserialize, Serialize};
-use tauri_plugin_store;
-use tauri_plugin_window_state;
+//use tauri_plugin_store;
+//use tauri_plugin_window_state;
 use whoami::username;
 //use window_shadows::set_shadow;
 

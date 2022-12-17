@@ -1,4 +1,4 @@
-import reportWebVitals from '@assets/js/reportWebVitals'
+//import reportWebVitals from '@assets/js/reportWebVitals'
 import { invoke } from '@tauri-apps/api/tauri'
 import userName from '@utils/Helpers/localStorageHandler'
 import { StrictMode } from 'react'
@@ -32,4 +32,4 @@ root.render(
   </StrictMode>
 )
 
-reportWebVitals(console.table)
+//reportWebVitals(console.table)
