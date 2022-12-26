@@ -122,6 +122,8 @@ const AlgoSection = () => {
   )
 }
 
+//TODO: move it to redux
+
 const SettingsPage = () => {
   const [enabled, setEnabled] = useState(false)
   const { scan } = useMDNSScanner('_waterchamber._tcp', 10)
