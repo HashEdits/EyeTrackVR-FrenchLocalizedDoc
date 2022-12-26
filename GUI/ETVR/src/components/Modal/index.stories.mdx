@@ -1,0 +1,20 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import Modal from './index'
+
+<Meta title="Modals/Modals" component={Modal} />
+
+export const Template = (args) => {
+
+return (
+
+<div>
+  <div>default modals will be here</div>
+  <Modal isVisible={false} onClose={() => {}}>
+    <div>example</div>
+  </Modal>
+</div>
+) }
+
+<Canvas>
+  <Story name="default Modal">{Template.bind({})}</Story>
+</Canvas>

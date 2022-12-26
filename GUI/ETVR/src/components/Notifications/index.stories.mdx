@@ -1,0 +1,10 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import Notifications from './index'
+
+<Meta title="Modals/Notifications" component={Notifications} />
+
+export const Template = (args) => <Notifications {...args} />
+
+<Canvas>
+  <Story name="default notification">{Template.bind({})}</Story>
+</Canvas>

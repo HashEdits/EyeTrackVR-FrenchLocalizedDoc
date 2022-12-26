@@ -1,39 +1,9 @@
 // NOTE: https://fecolormatrix.com/
 
-/* eslint-disable no-multi-str */
+import { ActiveStatus, GenerateMatrixShadow } from '@src/utils'
+
 export interface ICameraStatus {
   activeStatus: string
-}
-
-const ActiveStatus = (activeStatus: string) => {
-  switch (activeStatus) {
-    case 'active':
-      return '#1FDD00'
-    case 'loading':
-      return '#F9AA33'
-    default:
-      return '#DD0000'
-  }
-}
-
-const GenerateMatrixShadow = (activeStatus: string) => {
-  switch (activeStatus) {
-    case 'active':
-      return '0 0 0 0 0.121333 \
-              0 0 0 0 0.866667 \
-              0 0 0 0 0 \
-              0 0 0 1 0'
-    case 'loading':
-      return '0 0 0 0 1 \
-              0 0 0 0 0.20166699999999999 \
-              0 0 0 0 -1.878667 \
-              0 0 0 1 0'
-    default:
-      return '0 0 0 0 1.966667 \
-              0 0 0 0 0 \
-              0 0 0 0 -0.04366700000000001 \
-              0 0 0 1 0'
-  }
 }
 
 const CameraStatusIndicator = (props: ICameraStatus) => {
@@ -85,5 +55,4 @@ const CameraStatusIndicator = (props: ICameraStatus) => {
     </>
   )
 }
-
-export { CameraStatusIndicator, ActiveStatus, GenerateMatrixShadow }
+export default CameraStatusIndicator

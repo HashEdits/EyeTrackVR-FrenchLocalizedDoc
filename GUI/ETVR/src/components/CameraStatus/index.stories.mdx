@@ -1,0 +1,12 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import CameraStatusIndicator from './index'
+
+<Meta title="Camera/CameraStatusIndicator" component={CameraStatusIndicator} />
+
+export const Template = (args) => <CameraStatusIndicator {...args} />
+
+<Canvas>
+  <Story name="camera status indicator" args={{ activeStatus: 'active' }} argTypes={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

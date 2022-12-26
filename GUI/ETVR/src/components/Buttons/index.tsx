@@ -7,7 +7,7 @@ export interface Iprops {
   text: string
 }
 
-export function Button({ color, shadow, onClick, text }: Iprops): JSX.Element {
+export const Button = ({ color, shadow, onClick, text }: Iprops) => {
   return (
     <button
       className={styles.primary_btn}

@@ -1,0 +1,21 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import Tooltip from './index'
+
+<Meta title="Modals/Tooltip" component={Tooltip} />
+
+export const Template = (args) => {
+
+return <div>
+
+  <Tooltip>
+    <div>hey there</div>
+  </Tooltip>
+  
+  </div>
+}
+
+<Canvas>
+  <Story name="Tooltip" args={{ tooltip: 'tooltip' }} argTypes={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

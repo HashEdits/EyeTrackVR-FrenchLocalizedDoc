@@ -7,7 +7,7 @@ interface IModalProps {
   onClose: () => void
 }
 
-export const Modal = ({ children, isVisible, width, onClose }: IModalProps): JSX.Element | null => {
+const Modal = ({ children, isVisible, width, onClose }: IModalProps): JSX.Element | null => {
   if (!isVisible) return null
   return (
     <div
@@ -45,3 +45,5 @@ export const Modal = ({ children, isVisible, width, onClose }: IModalProps): JSX
     </div>
   )
 }
+
+export default Modal

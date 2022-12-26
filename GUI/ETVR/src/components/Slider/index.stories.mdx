@@ -1,0 +1,15 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import Slider from './index'
+
+<Meta title="Inputs/Sliders" component={Slider} />
+
+export const Template = (args) => <Slider {...args} />
+
+<Canvas>
+  <Story
+    name="camera status indicator"
+    args={{ min: '0', max: '100', step: '20', value: '20', id: '1' }}
+    argTypes={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

@@ -1,4 +1,5 @@
 import notify from '@hooks/general/useNotification'
+
 const Notifications = () => {
   return (
     <div className="notifications">

@@ -71,16 +71,7 @@ body {
   overflow: hidden;
   border-radius: 1rem;
   /* Clothoid Gradient */
-  background-image: linear-gradient(
-    rgb(24, 24, 43, 0) 0%,
-    rgba(24, 24, 43, 0.019) 50%,
-    rgba(24, 24, 43, 0.037) 65%,
-    rgba(24, 24, 43, 0.075) 75.5%,
-    rgba(24, 24, 43, 0.15) 82.85%,
-    rgba(24, 24, 43, 0.3) 88%,
-    rgba(24, 24, 43, 0.7900000214576721) 100%
-  );
-  background-color: #282830; /*this our primary bg color*/
+  background: linear-gradient(247.32deg, #282830 0%, #181c28 100%);
 }
 
 /* width */
