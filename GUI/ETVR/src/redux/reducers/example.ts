@@ -19,10 +19,6 @@ const uiSliceManager = createSlice({
   initialState,
 
   reducers: {
-    // loadState(state) {  commented for now becouse we do not have persistate
-    //   return state
-    // },
-
     setExample(state, action: PayloadAction<boolean>) {
       // if you want to add more that than that
       // simply change  action: PayloadAction<boolean> to  action: PayloadAction<{a,b}:IProps>
