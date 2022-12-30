@@ -10,10 +10,7 @@ import { routes } from '.'
 export default function AppRoutes() {
   const getUserName = () => {
     const userName = localStorage.getItem('settings')
-    if (typeof userName === 'string') {
-      const parsedItem = JSON.parse(userName) // ok
-      return parsedItem
-    }
+    if (typeof userName === 'string') return JSON.parse(userName)
     return ''
   }
 
@@ -21,8 +18,8 @@ export default function AppRoutes() {
     <BrowserRouter>
       <Header name={getUserName()['name'] ? `Welcome ${getUserName()['name']}` : 'Welcome!'} />
       <Routes>
-        {routes.map(({ index, path, element }) => (
-          <Route key={index} path={path} element={element()} />
+        {routes.map(({ index, path, Element }) => (
+          <Route key={index} path={path} element={<Element />} />
         ))}
       </Routes>
     </BrowserRouter>

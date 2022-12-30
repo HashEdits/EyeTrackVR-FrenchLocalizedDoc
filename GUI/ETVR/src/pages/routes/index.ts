@@ -3,10 +3,10 @@ import SettingsPage from '@pages/Settings'
 export interface IRoutes {
   path: string
   index: string
-  element: () => JSX.Element
+  Element: () => JSX.Element
 }
 
 export const routes: IRoutes[] = [
-  { path: '/', element: Main, index: 'main' },
-  { path: '/settings', element: SettingsPage, index: 'settings_page' },
+  { path: '/', Element: Main, index: 'main' },
+  { path: '/settings', Element: SettingsPage, index: 'settings_page' },
 ]
