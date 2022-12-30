@@ -1,0 +1,52 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import GeneralSection from './index'
+
+<Meta title="Modals/GeneralSection" component={GeneralSection} />
+
+export const Template = (args) => <GeneralSection {...args} />
+
+<Canvas>
+  <Story
+    name="GeneralSection"
+    args={{
+      onClickScan: () => {},
+      onClickRequest: () => {},
+      onChange: () => {},
+      enabled: true,
+      GeneralSettings: [
+        {
+          name: 'Flip Left Eye X Axis',
+          label: '',
+          tooltip: '',
+          type: '',
+        },
+        {
+          name: 'Flip Right Eye X Axis',
+          label: '',
+          tooltip: '',
+          type: '',
+        },
+        {
+          name: 'Flip Y Axis',
+          label: '',
+          tooltip: '',
+          type: '',
+        },
+        {
+          name: 'Dual Eye FallOff',
+          label: '',
+          tooltip: '',
+          type: '',
+        },
+        {
+          name: 'Sync Blinks (disables winking)',
+          label: '',
+          tooltip: '',
+          type: '',
+        },
+      ],
+    }}
+    argTypes={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

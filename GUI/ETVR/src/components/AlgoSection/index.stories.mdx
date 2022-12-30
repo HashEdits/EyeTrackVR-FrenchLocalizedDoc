@@ -1,0 +1,36 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import AlgoSection from './index'
+
+<Meta title="Modals/AlgoSection" component={AlgoSection} />
+
+export const Template = (args) => <AlgoSection {...args} />
+
+<Canvas>
+  <Story
+    name="AlgoSection"
+    args={{
+      AlgoSettings: [
+        {
+          name: 'Min Blob Size',
+          id: 'min_blob_size',
+          min: 0,
+          max: 100,
+          value: 10,
+          step: 1,
+          tooltip: 'sets the minimum size of the blob',
+        },
+        {
+          name: 'Max Blob Size',
+          id: 'max_blob_size',
+          min: 0,
+          max: 100,
+          value: 10,
+          step: 1,
+          tooltip: 'sets the maximum size of the blob',
+        },
+      ],
+    }}
+    argTypes={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
