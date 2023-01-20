@@ -1,26 +1,26 @@
-# Things To Know Before You Start {.text-[#ab5ac7]}
+# Choses à savoir avant de commencer {.text-[#ab5ac7]}
 
-## This page will be an overview of things to know and understand before you start this project
+## Cette page vous permetra d'avoir une vue d'ensemble des choses à savoir et comprendre avant de commencer ce projet
 
-### Software is not final
+### Le logiciel n'est pas final
 
-Bugs can and will occur which may hinder the experience or useability at times.
-Do not expect 100% reliable and perfect function. Not all features are fully developed yet.
+Des bugs qui pourrait gèner l'utilisation ou l'utilisabilité peuvent arriver 
+N'attendez pas qu'il soit 100% fiable ou fonctionalitées perfetement. Toutes les fonctionalitées ne sont pas encore totalement développé.
 
-### Firmware may have user difficulties
+### Le firmware peut être dificile à utiliser
 
-Our firmware has not been tested widely so issues may creep up.
+notre firmware n'a pas encore été testé à grande échelle, des problèmes peuvent donc se montrer.
 
-### IR emitters are dangerous
+### Les émeteurs infrarouges sont dangereux
 
-If handled wrong or precautions are ignored you can and will cause damage to your eyes. Please make sure to only buy linked ones or ones with specs that match exactly. We will not be responsible for damaged caused if you go your own route.
+si les précautions sont ignorées ou que le matériel est mal manipulé vous pouvez et allez vous faire des dégats aux yeux. Merci d'acheter uniquement les emeteurs que nous vous lions dans la doccumentation ou ceux qui ont des spécifications qui sont exactement identiques.
 
-### Documentation may be incomplete
+### La doccumentation peut être incomplète
 
-Important steps may be missing.
+Des étapes importantes peuvent ne pas être présentes
 
-### You will need to set up your avatar to use this
+### Vous aurez besoin de modifier votre avatar pour utiliser tout ça
 
-This will require some basic Unity knowledge and owning your own avatar.
+Cela requière des connaisances basiques de Unity et d'avoir votre propre avatar.
 
-### Once you have acknowledged the items above, move on to the [Full Build Guide](../how_to_build/full_build)
+### Une fois que tu à reconnus les points ci-dessus, tu peux suivre le [Guide d'assemblage complet](../how_to_build/full_build)
