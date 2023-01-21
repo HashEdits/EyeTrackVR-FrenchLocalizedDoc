@@ -2,7 +2,7 @@ const image_settings = {
     image_one: {
         url: "https://i.imgur.com/j18rRI7.jpg",
         alt: "'img of components'",
-        caption: "'ESPs, cams, a programmer and a USB connector'",
+        caption: "'les ESPs, caméras, un programmeur et un connecteur USB'",
         max_width: "max-width: 400px;"
     },
     discord_content: {
@@ -14,7 +14,7 @@ const image_settings = {
     external_antenna: {
         url: "https://i.imgur.com/OzpxFMD.png",
         alt: "'img of external antenna'",
-        caption: "Image from:",
+        caption: "Immage venant de: ",
         caption_link: "https://randomnerdtutorials.com/esp32-cam-connect-external-antenna",
         max_width: "max-width: 400px;"
     },

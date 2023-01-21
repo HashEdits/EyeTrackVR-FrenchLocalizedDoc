@@ -3,15 +3,15 @@ import type { IDevRoadMap } from '../types/interfaces'
 const RequiredHardware: IDevRoadMap = {
     state: true,
     object: [
-        {label: "2 ESP 32 CAM boards"},
-        {label: "2 160 degree cameras"},
-        {label: "1 USB board to power your ESPs"},
-        {label: "1 Programmer board(buying an extra is reccomended)"},
-        {label: "IR emitters, resistors, and preferably PCBs"},
-        {label: "Lower gauge wire to power ESPs"},
-        {label: "Higher gauge wire to power IR LEDs"},
-        {label: "3d printer to print mounts. (Buying them from some place like JLCPCB is also an option)"},
-        {label: "Glue of some form, hot glue highly recommended."},
+        {label: "2 cartes ESP32 CAM"},
+        {label: "2 caméras 160 degrés"},
+        {label: "1 connecteur USB pour alimenter vos ESPs"},
+        {label: "1 programmeur (vivement recommandé d'en prendre 2))"},
+        {label: "émetteurs infrarouges, résistances, et préférablement des PCBs"},
+        {label: "fils de calibres plus petit pour alimenter les ESP"},
+        {label: "fils de plus gros calibre pour alimenter les LEDs infrarouges"},
+        {label: "une imprimante 3D pour imprimer les fixations. (utiliser des sites comme JLCPCB peut également être une option)"},
+        {label: "de la colle, pistolet à colle fotement recommandé"},
     ]
 }
 
