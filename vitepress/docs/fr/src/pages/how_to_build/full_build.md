@@ -113,155 +113,155 @@ Vous allez avoir besoin de couper 3 différents cables. 2 courts pour connecter 
 
 Une fois coupé, dénuder 4mm de cable.
 
-## Étape 12: Twist the positive USB wire and positive IR LED wires together and tin them
+## Étape 12: Emèlez le cables 5v du connecteur USB et celui des LEDs infrarouges et les étamer
 
-Once twisted together add solder to keep them together. This makes the connection much easier.
+Une fois les cables entouré l'un autour de l'autre ajoutez de la soudure pour les tenir en place. Cela vous facilitera la tache lors de la soudure.
 
 <ImageCard :options="image_settings._7_12_three"/>
 
-## Étape 13: Solder the positive wire to ESP
+## Étape 13: Soudez le cable positif à votre ESP
 
-Lay the wire on the outside of the 5V pin and apply solder.
+Poser le cable de l'autre coté du pin 5v et appliquer de la soudure.
 
 <ImageCard :options="image_settings._13_18_one"/>
 
-## Étape 14: Solder the negative wire to ESP
+## Étape 14: Soudez le cable négatif à votre ESP
 
-Repeat [Étape 12](#step-12-twist-the-positive-usb-wire-and-positive-ir-led-wires-together-and-tin-them) but with the negative wires.
+Répétez l'[Étape 12](#step-12-twist-the-positive-usb-wire-and-positive-ir-led-wires-together-and-tin-them) mais avec les cables négatifs.
 
 ::: info
-As a user in our discord has learned, you can short the `IO12` pin with the ground pin `(GND)` without issues.
+comme un utilisateur de notre discord à découvert, vous pouvez relier le pin `IO12` avec le pin de la masse `(GND)` sans problèmes.
 :::
 
-In the below example I put it on the top of the pin, It will be a week-ish joint but that's where glue comes in handy.
+Dans l'exemple en dessous j'ai mis le tout au dessus du pin, ça sera une soudure qui durera à peu près une semaine, masi c'est là où le pistolet à colle se rend utile.
 
 <ImageCard :options="image_settings._13_18_two"/>
 
-## Étape 15: Wire up the 2nd ESP
+## Étape 15: Reliez votre deuxième ESP
 
-Repeat steps [12](#step-12-twist-the-positive-usb-wire-and-positive-ir-led-wires-together-and-tin-them)-[14](#step-14-solder-the-negative-wire-to-esp) with the 2nd ESP.
+Répètez les étapes[12](#step-12-twist-the-positive-usb-wire-and-positive-ir-led-wires-together-and-tin-them) à [14](#step-14-solder-the-negative-wire-to-esp) avec votre deuxième ESP.
 
-## Étape 16: Prepare to solder IR LED PCBs
+## Étape 16: Préparez la soudure des PCB des LEDs infrarouges
 
-Get your magnifying glass out, it's time to solder very smol things.
+sortez votre loupe, c'est le moment de souder les toutes petites choses.
 
-Gather 4 PCBs, 4 IR LEDs, and either 4 ~350ohm.
+récupèrez vos 4 PCBs, 4 LEDs infrarouges et vos 4 résistances d'~350ohm.
 
 <ImageCard :options="image_settings._13_18_three"/>
 
-Here are the PCB pin-out labels:
+Voici les PCBs avec les légendes pour le borchage:
 
 <ImageCard :options="image_settings._13_18_four"/>
 
-LED labels:
+légendes LED:
 
 <ImageCard :options="image_settings._13_18_five"/>
 
-If you have different LEDs, please consult their datasheet.
+Si vous avez des LEDs différentes, merci de consulter leur fiche technique.
 
-Some terminology related to them:
+Queslques terminologies étant asocié:
 
-`5V`: 5-volt power in.
+`5V`: le pin d'alimentation 5v.
 
-`GND`: Ground or power out.
+`GND`: Masse.
 
-`AR`: After-Resistor this is to be used as the power in on the 2nd PCB in series as resistors are not needed on the 2nd PCB since they are on the 1st one.
+`AR`: After-Resistor (après résistance) cela sera utilisé comme le pin d'alimentation sur les seconds PCBs relié en série vu que les résistance ne sont pas requises sur les seconds PCBs vu qu'ils sont sur les premiers.
 
-`SNG`: Single resistor, use this as 5V in if you are using only **1** `~700ohm` resistor on V3 boards (not recommended).
+`SNG`: Single resistor (Résistance unique), utilisez ce pin comme du 5v si vous utilisez **une seule** résistance de `~700ohm` sur les PCB v3 (pas recommandé).
 
-`Negative`: This marks the negative side of the LED.
+`Negative`: Cela indique la partie négative de la LED.
 
-`Positive`: This marks the positive side of the LED.
+`Positive`: Cela indique la partie négative de la LED.
 
-## Étape 18: Solder resistors on PCB V3
+## Étape 18: Soudez les résistances au PCB v3
 
-You only need 1 PCB to have resistors per eye.
+Vous aurez besoin d'un seul PCB ayant des résistances par Œil.
 
-Tin the resistor pads. Note: in this example, I use too much solder, it should only be enough to lightly cover the pad.
+Étamer les pads des résistances. Note: dans cet exemple, j'ai utilisé un peu trop de soudure, il devrait uniquement en avoir assez pour recouvrir légèrement le pad.
 
 <ImageCard :options="image_settings._13_18_six"/>
 
-Next, grab a resistor and hold it on the pads.
+En suite, atrapez une résistance et la placer sur les pads.
 
 <ImageCard :options="image_settings._13_18_seven"/>
 
-While holding the resistor add solder to your soldering iron and apply it to the resistor.
+Pendant que vous tennez la résistance, ajoutez de la soudure sur votre fer à souder et appliquez la sur la résistance.
 
-I like to do this by having a piece of my solder stick up in the air and then put it on my iron that way.
+J'aime faire ça en ayant un bout de mon étain en l'air et le toucher avec mon fer à souder pour pouvoir tout appliquer facilement.
 
 <ImageCard :options="image_settings._13_18_eight"/>
 
-Flip the PCB and solder the other end.
+retournez le PCB et souder l'autre bout.
 
 <ImageCard :options="image_settings._13_18_nine"/>
 
-Now repeat for the other one.
+Maintenant repetez pour l'autre résistance.
 
 <ImageCard :options="image_settings._13_18_ten"/>
 
-## Solder LEDs on PCB V3
+## Soudez les LEDs au PCB v3
 
-Tin the LED pads.
+Étamez les pads des LED.
 
 <ImageCard :options="image_settings.end_one"/>
 
-Orientate the LED and hold it in place.
+Orientez la LED et la tenir en place.
 
 <ImageCard :options="image_settings.end_two"/>
 
-Solder one end.
+Soudez un côté.
 
 <ImageCard :options="image_settings.end_three"/>
 
-Flip around and solder the other end.
+Retournez-là et soudez l'autre côté.
 
 <ImageCard :options="image_settings.end_four"/>
 
-## Wire up the PCBs V3
+## Reliez les PCB v3
 
-::: warning
-Pay attention to the direction of the LEDs on the PCBs.
+::: Attention
+Faites attention à la direction des LEDs sur les PCBs.
 :::
 
-If the green dot is facing inwards like in the picture below:
+Si les marques vertes font face à l'interieur du PCB comme dans l'image ci-dessous: 
 
 <ImageCard :options="image_settings.end_five"/>
 
-Use the following diagram:
+Veuillez suivre le diagramme ci-dessous:
 
 <ImageCard :options="image_settings.end_six"/>
 
-If the green dot is facing outward like the picture below:
+Si les marques vertes font face à l'exterieur comme l'image ci-dessous:
 
 <ImageCard :options="image_settings.end_seven"/>
 
-Use the following diagram:
+Veuillez suivre le diagramme ci-dessous:
 
 <ImageCard :options="image_settings.end_eight"/>
 
-## Étape 19: 3D print mounts
+## Étape 19: Montures imprimés en 3D:
 
-Head to the 3D printed parts section of the parts list [here.](/how_to_build/parts_list#other-parts)
+Dirigez vous vers vers [la partie des pièces imprimées en 3D](/how_to_build/parts_list#other-parts) de la liste du matériel.
 
-Find which parts are for your headset and print them.
-Some may work better or worse, it is recommended to test all of them if there are multiple, print one of each kind.
-If none work, try making an edit yourself if you have the skills. If you have made a mount make sure to ping me, `Prohurtz#0001`, so I can add them to the list.
+Trouvez quel pièces sont pour votre casque et imprimez-les.
+Certaines pièces vont marcher mieux que d'autres, il est recomandé de toutes les tester si il y en à plusieures disponibles, imprimez une de chaque.
+Si aucune ne fonctionnes, vous pouvez essayer de les modifier vous même si vous savez comment faire. Si vous avez fait votre propre monture, merci de me notifier sur discord (en anglais), `Prohurtz#0001`, pour que je l'ajoute à notre liste.
 
-Having trouble getting them to fit? Try resizing the mounts up, or down a little to ensure a good fit.
+Vous avez des problèmes à faire tenir les montures? essayez d'augmanter ou baisser l'échelle un petit peu afin d'assurer que ça rentres ni que ça ne bouges pas trop.
 
-There are 2 different types of mounts, how to secure the camera to each type will be documented below.
+Il y à 2 mécanismes pour atacher les camérs j'usqu'a maintenant, vous trouverez comment sécuriser les caméras au différent types ci-dessous.
 
 ### Type 1
 
 <ImageCard :options="image_settings.end_nine"/>
 
-This uses a method of sliding in the camera. Generally, this is the recommended mounting method as it generally requires no glue.
+Ce design vous demande de glisser la caméra dans l'encoche. Généralement cette méthode de montage de la caméra est recommandé vu qu'elle n'a pas besoin de colle pour tenir en place.
 
-Place the camera into the mount
+placez la caméra dans l'encoche 
 
 <ImageCard :options="image_settings.end_ten"/>
 
-Slowly apply pressure inwards until the camera snaps into place.
+appuyez lentement à l'intérieur de la caméra pour la faire cliquer en place.
 
 <ImageCard :options="image_settings.end_eleven"/>
 
@@ -269,7 +269,7 @@ Slowly apply pressure inwards until the camera snaps into place.
     <Alerts :options="alerts.end_one">
         <template v-slot:content>
             <p>
-                There is a good chance of breaking the mount when putting in the camera. If this happens you may be able to save the mount depending on where the break was. A small dab of hot glue around the camera is likely all that is needed.
+                Il y a de fortes chances de casser la monture en inserrant le caméra. Si ça arrives vous pouvez quand même sauver la monture en fonction d'où elle à casser. Un point de pistolet à colle à l'endroit suffra probablement.
             </p>
         </template>
     </Alerts>
@@ -279,29 +279,29 @@ Slowly apply pressure inwards until the camera snaps into place.
 
 <ImageCard :options="image_settings.end_twelve"/>
 
-This uses the method of gluing the camera.
+Ce design requière de la colle afin de fixer la caméra en place.
 
-Apply a bit of glue to the bottom of the camera mount.
+appliquer un peu de colle au fond de l'endroit ou la caméra doit aller.
 
 <ImageCard :options="image_settings.end_thirteen"/>
 
-Place the camera on the mount.
+Placez la caméra sur la monture.
 
 <ImageCard :options="image_settings.end_fourteen"/>
 
-## IR LED mounting
+## Attacher les LEDs infrarouges.
 
-This again differs from mount to mount.
+Une fois de plus les étapes vont changer en fonction de la monture.
 
-In some cases, there are designated spots for the LEDs to go.
+Dans certaines cas il y aura des endroits pré-définis pour placer les LEDs.
 
 <ImageCard :options="image_settings.end_fifteen"/>
 
-In others there are no specified spots, you will have to mess around to find what works best.
-This image shows the optimal/near-optimal position for the LEDs. Hot glue is your friend with this.
+Dans d'autres cas il n'y à pas d'endroit attitré pour vos LEDs, vous aurez à bidouiller pour trouver ce qui fonctionnera le mieux.
+Cette image montre les positions optimales (ou proche d'optimal) pour les LEDs. Le pistolet à colle sera votre ami pour cette étape.
 
 <ImageCard :options="image_settings.end_sixteen"/>
 
-::: tip
-Use rubbing alcohol to easily remove hot glue.
+::: conseil
+vous pouvez utiliser de l'alcool à 90° pour retirer facilement la colle.
 :::
