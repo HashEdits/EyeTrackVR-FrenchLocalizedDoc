@@ -8,10 +8,10 @@ const alerts = {
     },
     led_power_warning: {
         type: 'danger',
-        title: 'Please pay attention',
+        title: 'Merci de faire attention',
         title_color: 'text-[#b63a61] dark:text-[#ea4b7d]',
         text_color: 'text-orange-400 dark:text-orange-500',
-        badge_content: 'WARNING'
+        badge_content: 'ATTENTION'
     },
     parts_list_one: {//
         type: 'warning',
@@ -46,14 +46,14 @@ const alerts = {
         title: '',
         title_color: 'text-[orange]',
         text_color: 'text-slate-500 dark:text-slate-400',
-        badge_content: 'CAUTION',
+        badge_content: 'ATTENTION',
     },
     parts_list_six: {
         type: 'tip',
         title: '',
         title_color: 'text-[green]',
         text_color: 'text-slate-500 dark:text-slate-400',
-        badge_content: 'TIP',
+        badge_content: 'CONSEIL',
     },
     upload_firmware_one: {
         type: 'info',

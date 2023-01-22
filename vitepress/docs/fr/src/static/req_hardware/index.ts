@@ -7,11 +7,11 @@ const RequiredHardware: IDevRoadMap = {
         {label: "2 caméras 160 degrés"},
         {label: "1 connecteur USB pour alimenter vos ESPs"},
         {label: "1 programmeur (vivement recommandé d'en prendre 2))"},
-        {label: "émetteurs infrarouges, résistances, et préférablement des PCBs"},
-        {label: "fils de calibres plus petit pour alimenter les ESP"},
-        {label: "fils de plus gros calibre pour alimenter les LEDs infrarouges"},
-        {label: "une imprimante 3D pour imprimer les fixations. (utiliser des sites comme JLCPCB peut également être une option)"},
-        {label: "de la colle, pistolet à colle fotement recommandé"},
+        {label: "Émetteurs infrarouges, résistances, et préférablement des PCBs"},
+        {label: "Câble de calibres plus petit pour alimenter les ESP"},
+        {label: "Câble de plus gros calibre pour alimenter les LEDs infrarouges"},
+        {label: "Une imprimante 3D pour imprimer les fixations/montures. (utiliser des sites comme JLCPCB peut également être une option)"},
+        {label: "De la colle, pistolet à colle fotement recommandé"},
     ]
 }
 
