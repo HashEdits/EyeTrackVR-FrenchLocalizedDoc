@@ -1,38 +1,36 @@
-# Creating Your Own Mount {.text-[#ab5ac7]}
+# Créer votre propre support {.text-[#ab5ac7]}
 
-## This page will include a basic rundown on how to create your own camera mount for a headset that may not have any existing community mounts
+## Cette page vous donnera les différentes étapes à suivre afin de créer votre monture afin d'acrocher les caméras dans un casque qui n'aurait pas encore utilisé par un membre de la communauté.
 
-So, you have a headset that does not have any mounts or none that work well for you. Here I will show some simple steps to get some form of a mount working.
+Donc, vous avez un casque pour lequel il n'existe pas encore de montures existante ou adaptés à vos besoins.Je vais vous expliquer les différentes étapes permeetant de créer une monture fonctionelle.
 
-## Step 1: Find a way to mount to your headsets lens
+## Étape 1: Trouver un moyen d'attacher la monture aux lentilles votre casque
 
-The easiest way to get started is to find a lens protector for your headset.
-Either go to a website like [Thingiverse](https://www.thingiverse.com/) or just do a search for "3d printed lens protector for {your headset here}"
+La façon la plus simple de commencer est de trouver une lentille de protection pour votre casque. Vous pouvez aller sur un site comme [Thingiverse](https://www.thingiverse.com/) ou juste recherher "3d printed lens protector for {votre casque ici}"
 
-Example: Here is a lens protector for the Quest 1/2 and Rift S [https://www.thingiverse.com/thing:3653631](https://www.thingiverse.com/thing:3653631)
+Exemple: Voici une lentille de protection pour le Quest 1/2 et le Rift S [https://www.thingiverse.com/thing:3653631](https://www.thingiverse.com/thing:3653631)
 
-## Step 2: Find a camera mount
+## Étape 2: Trouver Une support de caméra
 
-Now, you need a way to attach the camera. We have a basic design that qdot created (taken from his mount) on the hardware GitHub [here](https://github.com/RedHawk989/EyeTrackVR-Hardware/blob/main/3d_Printed_Mounts/Basic_Mount_Components/basic_ETVR_camera_mount.stl)
+Maintenant que vous avez votre monture de lentille, il vous faut trouver un moyen d'attacher les caméras. Nous avons un design basique que qdot a créer (extrait de sa monture) sur le GitHub Matériel [ici](https://github.com/RedHawk989/EyeTrackVR-Hardware/blob/main/3d_Printed_Mounts/Basic_Mount_Components/basic_ETVR_camera_mount.stl)
 
-Alternatively, you can create your own mount if you have the skills.
+Sinon, Si vous êtes assez experimenté vous pouvez créer votre propre support de caméra.
 
-## Step 3: Place the camera mount where it will give a good camera angle
+## Étape 3: Placer le support de caméra à un endroit propice à bien voir vore œil
 
-The "Ideal" location is a place that gives a good view of the pupil when looking to all extremes, the lower corners do a good job at getting there, or nearly there.
+Le placement "idéal" est un endroit où la la caméra auroit uen bonne vue de votre pupille quand vous êtes dans regardez à des angles extrêmes. Les coins inférieurs sont généralement assez propice à obtenir de tels résultats.
 
-You want to put the camera as close to the headset's lens as possible to achieve the biggest view of the eye.
-I recommend looking at other headset mounts for [inspiration.](https://github.com/RedHawk989/EyeTrackVR-Hardware/tree/main/3d_Printed_Mounts)
+Il est recomandé d'avoir les caméras au plus proche de la lentille de votre casque afin que votre œil prennes le plus de place dans le champ de vision de la caméra. Je vous insite à regarder les autres montures pour vous en [inspiréer.](https://github.com/RedHawk989/EyeTrackVR-Hardware/tree/main/3d_Printed_Mounts)
 
-## Step 4: Mount your LEDs
+## Étape 4: Support pour vos LEDs
 
-You can either add parts to your mount for holding the LED boards or just glue them on. It's up to you and what works best for you, experiment!
+Vous pouvez ajouter dex extrusions à votre monture pour tenir les LEDs en place, ou juste les coller. C'est à vosu de décider ce qui marches ou pas, n'hesitez pas à experimenter!
 
-## Step 5: Test everything
+## Étape 5: Testez tout
 
-It is unlikely you will get a perfect mount on the first try. Print, test, adjust, and repeat until you have a satisfactory mount.
-Good luck!
+Il est fortement imprbable d'obtenir une monture parfaite du premier coup. Imprimez re-testez, ajustez et répètez j'usqu'à ce que vous ayez une monture satisfesante. 
+Bonne chance!
 
-## Step 6: Get your mounts listed
+## Étape 6: venez faire lister vos montures
 
-Send me the mount to be added to the docs here! You can upload it to Thingiverse or similar services, or just send me the .STLs via discord `(Prohurtz#0001)`
+Envoyez moi vos montures pour qu'elles soit ajoutées dans la doccumentation! vous pouvez les mettre en ligne sur Thingyverse ou un service similaire, ou envoyez moi juste les fichiers .STL en m'ajoutant sur discord `(Prohurtz#0001)`
