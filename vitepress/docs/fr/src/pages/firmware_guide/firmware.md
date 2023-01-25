@@ -1,11 +1,11 @@
-# What is this? {.text-[#ab5ac7]}
+# C'est quoi ce truc? {.text-[#ab5ac7]}
 
-Firmware is the second part of the equation to get your trackers going. It lives on the ESP32 chip, and is responsible for streaming video data from the tracker.
+Le firmware est la deuxième parite de l'équation pour que le suivi fonctionnes. Il vis sur les puces ESP32, et est résponsable de streamer le flux vidéo de votre tracker à votre ordinateur.
 
-## What should I download and where?
+## Qu'est-ce que je dois télécharger et où?
 
-Current testing has been on our own solution called OpenIris, [found here](https://github.com/lorow/OpenIris). To check the status of the project, please visit the [Development Road Map](/dev_roadmap)
+Les tests récents sont fait avec notre propre solution s'appelant OpenIris, [ce trouvant ici](https://github.com/lorow/OpenIris). Afin de regarder l'état du projet, vous pouvez regarder notre [programme de développement ici](/dev_roadmap)
 
-## How do download this?
+## Comment est-ce que je le télécharges?
 
-[Follow the steps described here](/firmware_guide/setup_vscode)
+[Suivez les étapes indiquées ici](/firmware_guide/setup_vscode)

@@ -5,26 +5,26 @@ import { image_settings } from '../../static/image_settings'
 import { alerts } from '../../static/alerts'
 </script>
 
-# Configuring the firmware {.text-[#ab5ac7]}
+# Configurer le firmware {.text-[#ab5ac7]}
 
-## Once you have opened the project, you should see something on the left side like this
+## Une fois que vous avez ouvert le projet, vous devrez voir quelque chose dans le menu de gauche qui resembles à ça
 
 <ImageCard :options="image_settings.configure_firmware_one"/>
 
-## Open the `platformio.ini` file
+## Ouvrez le fichier `platformio.ini`
 
 <ImageCard :options="image_settings.configure_firmware_two"/>
 
-On lines 17 and 18 replace the placeholder text with your correct SSID (WiFi access point name), and password respectfully.
+Sur les lignes 17 et 18, remplacez le texte bidon avec votre SSID (WiFi access point name) et mot de passe correctement saisi.
 
 <Alerts :options="alerts.parts_list_one">
     <template v-slot:content>
         <p>
-           Make sure your wifi router has a 2.4 GHz band. While most do, this is not always the case. Setting each band (5GHz, and 2.4GHz) to different SSIDs is recommended, though not required.
+           Faites attention que votre routeur WiFi ait bien une bande 2.4Ghz. Bien que la plupart en ont, ce n'est pas ytoujours le cas. Séparer vos bandes 5Ghz et 2.4Ghz est vivement recomandé, bien que pas obligatoire.
         </p>
     </template>
 </Alerts>
 
-Double check that you have correctly entered your WiFi credentials and that said wifi network has a 2.4GHz band.
+Re-verifiez que vous avez bien renté vos identifiants WiFi et que ce réseau WiFi ait bien une bande 2.4Ghz.
 
-## [Now, move on to uploading the firmware](/firmware_guide/upload_firmware.html)
+## [Maintenant vous pouvez aller téléverser le firmware](/firmware_guide/upload_firmware.html)

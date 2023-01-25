@@ -3,54 +3,54 @@ import ImageCard from '../../vue/images/ImageComponent.vue'
 import { image_settings } from '../../static/image_settings'
 </script>
 
-# Setting up the environment {.text-[#ab5ac7]}
+# Mettre en place l'environement de développement {.text-[#ab5ac7]}
 
-This procedure will show how to prepare your system for uploading the firmware to your tracker.
+Cette procédure va vous montrer comment préparer votre système pour téléverser le firmware dans votre tracker.
 
-## 1. Install Visual Studio Code
+## 1. Installez Visual Studio Code
 
-Download the [latest Visual Studio Code](https://code.visualstudio.com/download) and install it.
+Téléchargez la [dernière version de Visual Studio Code](https://code.visualstudio.com/download) et installez la.
 
-### Download
+### téléchargement
 
 <br>
 <ImageCard :options="image_settings.setup_vscode_image_one"/>
 
-### Install
+### Installez
 
 <br>
 <ImageCard :options="image_settings.setup_vscode_image_two"/>
 
-## 2. Install PlatformIO IDE
+## 2. Installez l'EDI PlatformIO
 
-Once Visual Studio Code is installed, open it and install [PlatformIO IDE for VSCode](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide), an extension that will allow you to connect to the tracker, build and upload the firmware.
+Une fois que Visual Studio Code est installé, ouvrez et installez [PlatformIO IDE pour VSCode](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide), une extension qui va vous permettre de vous connetcer à votre tracker, construire et téléverser le firmware.
 
 <ImageCard :options="image_settings.setup_vscode_image_three"/>
 
-## 3. Clone the firmware project
+## 3. Clonez le projet du firmware
 
-Make sure you close any current projects you have open or open a new window before moving forward with these steps.
+Faites en sorte de fermer tout projet ou fenetre que vous avez déjà ouvert avant d'aller plus loin.
 
-1. Go to [https://github.com/lorow/OpenIris](https://github.com/lorow/OpenIris) and `clone` the latest version from the `main` branch.
-   1. If you do not have `git` installed please install it from [here](https://git-scm.com/download/win).
+1. Allez à [https://github.com/lorow/OpenIris](https://github.com/lorow/OpenIris) et `clonez` la dernière version de la branche `main`.
+   1. Si vous n'avez pas encore`git` installé merci de l'installer via [ce lien](https://git-scm.com/download/win).
 
-   2. Open Git Bash.
+   2. Ouvrez Git Bash.
 <ImageCard :options="image_settings.setup_vscode_image_four"/>
 
-   1. Change the directory to the directory that you want the firmware to be cloned. Ex: `cd C:\`
+   1. changer votre répertoire courant avec celui où vous aimeriez cloner le firmware. Ex: `cd C:\`
 
 <ImageCard :options="image_settings.setup_vscode_image_five"/>
 
-   1. Clone the repository by entering the command: `git clone https://github.com/lorow/OpenIris.git`
+   1. Clonez le the dépôt en entrant la commande: `git clone https://github.com/lorow/OpenIris.git`
 
 <ImageCard :options="image_settings.setup_vscode_image_six"/>
 
-   For more info about cloning please refer to [this documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+   Pour avoir plus d'infos le clonage, merci de vous réfèrer à [cette documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
-   _**Do not download as a zip**_ - please only properly clone the project, take note of the path you run the clone command in, this is where the files will be downloaded. When we open it in PlatformIO later, this path will be needed.
+   _**Ne téléchargez pas en temp que ZIP**_ - clonez le projet correctement s'il vous plait, faites attention à où vous l'avez télécharger. Vous alez avoir besoin de ce répertoire plus tard quand vous alez ouvrir PlatformIO.
 
-1. Open the firmware in VSCode by going to PlatformIO, selecting open, then navigating to `OpenIris/ESP`  folder and opening it.
+1. Ouvrez le firmware dans VSCode en allant dans PlatformIO, puis selectionnez open, puis aller dans le dossier `OpenIris/ESP` et ouvrez le.
 
 <ImageCard :options="image_settings.setup_vscode_image_seven"/>
 
-_This is an adaptation from SlimeVR. Some Credit goes to the SlimeVR team [adapted from here](https://docs.slimevr.dev/firmware/setup-and-install.html)_
+_Ceci est inspiré de la [doccumentation de SlimeVR](https://docs.slimevr.dev/firmware/setup-and-install.html). Un bout du mérite revint donc à l'équipe de SlimeVR._
