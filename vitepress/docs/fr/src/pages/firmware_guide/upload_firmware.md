@@ -5,94 +5,94 @@ import { image_settings } from '../../static/image_settings'
 import { alerts } from '../../static/alerts'
 </script>
 
-# Building and uploading the firmware manually {.text-[#ab5ac7]}
+# Construire et téléverser le firmware manuellement {.text-[#ab5ac7]}
 
-Uploading your firmware must initially be done over cable. Once you have the tracker connected to your WiFi after your first firmware update, you can opt to use OTA in the future.
+Téléverser votre firmware à besoin d'être fait initialmenet en utilisant un câble. Une fois que vous avez votre tracker connecté à votre WiFi, vous pourrez utiliser OTA pour mettre votre tracker à jour.
 
-## 1. Connect your tracker to your PC via the programmer
+## 1. Connectez votre tracker avec le programmeur à votre PC
 
-First, connect your ESP32-Cam to your programmer. In the case of the ESP32-Cam-MB board, it's as simple as sticking it into the socket the way it came in the package and then connecting it to your PC with a micro-USB cable. In some cases, there is a button labeled IOO on the programmer. If that button exists make sure to hold it in while you plug the programmer into your pc, once plugged in you can release the button.
+Pour commencer connectez votre ESP32-CAM à votre programmeur. dans le cas des programmeurs ESP32-CAM-MB la manipulation sera aussi simple que de faire glisser votre ESP32-CAM dans le socket et connecter le tout à votre PC avec un câble micro-USB. Dans certains cas ils y aura un bouton s'appelant IO0 sur le programmeur. Si c'est le cas du votre il faudrait que vous le mainteniez appuyé lorsque vous le connectez à votre PC. Une fois connecté vous pouvez relacher le bouton.
 
-In the case of an FTDI programmer, the steps aren't as easy, so grab [this guide](https://randomnerdtutorials.com/program-upload-code-esp32-cam/) for how to set it up.
+Dans le cas ou vous auriez un programmeur FTDI, ça sera un peu plus compliqué pour vous malhereusement, donc armez vous de patience et aller jeter un coup d'œil à [ce guide](https://randomnerdtutorials.com/program-upload-code-esp32-cam/) pour voir comment tout mettre en place.
 
-## 2. Build your firmware
+## 2. Construire le firmware
 
-1. Press the build button at the bottom of Visual Studio Code.
+1. Clickez sur le bonton Build tout en bas de la fenêtre de Visual Studio Code.
 
-  This builds the firmware, but does not send it to the ESP yet.
+  Ce bouton lance la construction du firmware, masi ne l'envoie pas encore à votre ESP.
 
    ![img](https://i.imgur.com/EmSkhFp.png)
 
-## 3. Upload your firmware
+## 3. Téléverser votre firmware
 
-- If you are using the OTA method, first make sure the tracker you wish to flash is turned on.
+- Si vous utilisez l'OTA, verifiez que le tracker que vous voulez flasher est allumé.
 
-- Once the firmware has been built, press the upload button to upload the firmware.
+- Une fois que le firmware à été construit, appuyez sur le bouton uppload pour téléverser le firmware.
 
-  This sends the firmware to the ESP.
+  Ce bouton envoie le firmware dans votre ESP
   ![img](https://i.imgur.com/lI3PFVC.png)
 
 <Alerts :options="alerts.upload_firmware_one">
     <template v-slot:content>
         <p>
-           The MB board does the resetting for you. If you're using the FTDI programmer, follow the guide linked above (the one from randomnerdtutorials)
+           Le programmeur MB ne vous restrain pas. Si vous utilisez un programmeur FTDI suivez le guide lié plus haut (celui de randomnerdtutorials)
         </p>
     </template>
 </Alerts>  
 
-- If the upload is successful, you should get an output that looks like this:
+- Si le téléversement c'est bien passé vous devriez avour une console qui resembles à quelque chose comme ça:
 
   ![img](https://i.imgur.com/SDQcCr1.png)
 
-Congratulations! You have now successfully uploaded the firmware to your EyeTrackVR Tracker!
+Bravo! vous avez maintenant téléverser le firmware avec succes dans votre Tracker EyeTrackVR!
 
-If you have trouble with uploading your firmware over cable check the following:
+Si vous galerez à téléverser votre firmware en utilisant un câble, vous pouvez suivre les étapes suivantes:
 
-1. Make sure your USB cable from the tracker is plugged firmly into your PC.
-2. Make sure that your USB cable is a data and charging cable (it is suggested you try other cables or devices with the cable).
-3. Make sure that your drivers are up-to-date.
-4. Some ports might not work, try other ones.
+1. Verifiez que votre câble USB est bien enfoncé et branché à votre PC.
+2. Verifiez que votre câble USB permet bien de transmettre des données (il est suggèré d'essayer d'autres appareils ou d'autres câbles).
+3. Verifiez que vos drivers sont à jour.
+4. Essayez d'autres ports USB, certains pourait ne pas être fonctionnels.
 
-Additionally, this can be caused by software hogging COM ports (**VSCode and Cura can be the cause of this**).
+De plus, vos problèmes peuvent être causé par un logiciel tier qui bloques vos ports série COM (**VSCode ou Cura peuvent être une cause de ces problèmes**).
 
-## Uploading via OTA
+## Téléverser via OTA
 
-Once you have successfully connected your trackers to your WiFi, you can use OTA to handle all future firmware updates.
+Une fois que vous avez réussi à connecté vos trackers au WiFi, vous pouvez utiliser OTA pour gèrer les mises à jour logiciels.
 
-1. Retrieve the IP of the tracker you wish to flash. The IP can be found through network monitoring applications, or by viewing tracker output in a serial monitor.
-2. In `platformio.ini` file uncomment the following lines in Visual Studio Code by removing the `;`:
+1. Récupèrez l'IP de votra tracker que vous voulez flasher. Cette IP peut être trouvé via une application d'analyse du trafic ou en regardant le moniteur série du programmeur auquel votre tracker est connetcé.
+2. Dans le fichier `platformio.ini` décommentez les lignes suivantes dans visual studio en retirant les `;`:
 
 ```ini
 ;upload_protocol = espota
 ;upload_port = 192.168.1.49
 ```
 
-1. Change the value of upload_port to the IP address retrieved during the first step.
-1. Turn the tracker you wish to flash off and then on again.
-1. Wait around 5 seconds.
-1. Press the upload button to upload the firmware.<br>  
+1. Changez la valeur la valeur de upload_port avec l'adresse IP récupèré plus tôt.
+2. Eteignez et ré-allumez votre tracker que vous voulez flasher.
+3. Attendez environ 5 secondes.
+4. Appuilez sur le bouton upload pour téléverser le firmware.<br>  
    ![img](https://i.imgur.com/lI3PFVC.png)
-1. Repeat for as many trackers as you need.
+5. Répètez les étapes ci-dessus autant de fois que vous avez de trackers.
 
-## Finding the IP address of your tracker
+## Trouver l'adresse IP de votre tracker
 
-Connect your tracker to your PC and then open a serial monitor in VSC by pressing the `plug`  icon.
+Connectez votre tracker à votre PC et ouvrez le moniteur série dans VSCode en appuilant sur l'icone en forme de `prise`.
 
 <ImageCard :options="image_settings.upload_firmware_image_one" />
 
-Now, press the restart button on the esp itself.
-watch the monitor for output like this:
+Maintenant, appuilez sur le bouton redémarer de l'ESP.
+trouver quleque chose resemblant à ça dans la sortie du moniteur série:
 
 <ImageCard :options="image_settings.upload_firmware_image_two" />
 
-The text, highlighted in green for demonstration, is the stream address of the camera. Take note of this for input into the software.
+Le texte surligné est uniquement là dans cette doccumentation pour vous indiquer où ce trouve l'adresse de la caméra. Merci de la noter quelque part afin de la rentrer dans le logiciel.
 
-Keep in mind while testing and getting set up, the ESP can only have one client, to use the camera in the app, make sure you close the browser tab you tested it in.
+Rappelez bous bien qu'un ESP ne peut avoir qu'un client, pour puvoir utiliser l'application faites bien attention de fermer votre page de navigateur préalablement ouvtere pour tester que tout fonctionnes bien.
 
-## Troubleshooting
+## Dépannage
 
-If you encountered an issue while following these steps check the [FAQ.](/misc/faq.html)
+Si vous rencontrez un problème en suivant les étapes ci-dessus, vous pouvez regarder la [FAQ.](/misc/faq.html) ici.
 
-If you don't find an answer to your question there ask in **#questions** channel in [the discord](https://discord.gg/kkXYbVykZX), we will be happy to help.
+Si vous ne trouvez pas de réponse à votre question, vous pouvez venir la poser en anglais dans le channel **#questions** dans [notre discord](https://discord.gg/kkXYbVykZX), on serait content de vous aider.
 
-*Adapted from the SlimeVR docs, Some Credit goes to the SlimeVR team [here](https://docs.slimevr.dev/firmware/setup-and-install.html)*
+*Adapté de la [doccumentation de SlimeVR](https://docs.slimevr.dev/firmware/setup-and-install.html), Un bout du mérite revint donc à l'équipe de SlimeVR*

@@ -7,17 +7,17 @@ const theme = {
     logo: {
         light: '/logo_light.png', dark: '/logo.svg', alt: 'EyeTrackVR Logo'
     },
-    siteTitle: 'EyeTrackVR Docs',
+    siteTitle: 'Docs EyeTrackVR',
     /* Note the footer will not show when sidebar is active */
     footer: {
-        message: "Released under the MIT License.",
+        message: "Sorti sous une licence MIT.",
         copyright: "Copyright © 2022-present ETVR",
     },
     nav: [
         {
-            text: 'About',
+            text: 'À propos',
             items: [
-                { text: 'About Us', link: '/about' },
+                { text: 'À propos de nous', link: '/about' },
                 { text: 'Development Road Map', link: '/dev_roadmap' },
             ]
         },
@@ -48,7 +48,9 @@ const theme = {
                 { text: "Introduction", link: "/firmware_guide/firmware" },
                 { text: "Setup Visual Studio Code environment", link: "/firmware_guide/setup_vscode" },
                 { text: "Configuring Firmware", link: "/firmware_guide/configure_firmware" },
-                { text: "Getting Started", link: "/firmware_guide/upload_firmware" },
+                { text: "Upload Firmare", link: "/firmware_guide/upload_firmware" },
+                { text: "MDNS", link: "/firmware_guide/mdns" },
+                { text: "REST API", link: "/firmware_guide/rest_api" },
             ],
         },
         {

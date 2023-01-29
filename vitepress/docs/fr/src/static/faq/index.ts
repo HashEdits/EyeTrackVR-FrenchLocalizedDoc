@@ -1,62 +1,62 @@
 const faq = {
     faq: [
         {
-            question: "What is the goal of this project?",
-            answer: "To provide an open source, affordable VR eyetracker for Socail games like VRChat as well as provide an open eyetracking platform.",
+            question: "Quel est le but de ce projet?",
+            answer: "De prodiguer un système de suivi des yeux, Open source, abordable pour les jeux sociaux VR tel que VRChat, en plus de créer une plateforme de suivid des yeux ouverte.",
             hyper_link: "",
             link_description: "",
         },
         {
-            question: "What headsets will be supported?",
-            answer: "Any headset that the hardware can fit in with community mounts or a mount you design.",
+            question: "Quel casques seront supportés?",
+            answer: "N'importe quel casque dans lequel le matériel peut rentrer et où vous ou la communauté à créer une monture.",
             hyper_link: "",
             link_description: "",
         },
         {
-            question: "How will this work?",
-            answer: "Currently, a camera is mounted inside the headset for each eye. The camera streams through wifi to a PC client which processes and sends eye tracking data to an OSC endpoint ex VRChat.",
+            question: "Comment est-ce que ça marches?",
+            answer: "Pour l'instant, on utilises une caméra pour chaque œil monté dans le casque. la caméra stream son flux vidéo vers votre PC pour être analysé afin d'envoyer les données de suivi via OSC à l'adresse de VRChat.",
             hyper_link: "",
             link_description: "",
         },
         {
-            question: "What features will be supported?",
-            answer: "The goal is eye tracking with eye openness, and some form of pupil dilation. A far away aspiration of this project is some form of weak foveated rendering because it's cool and any small performance increase in VR is welcome.",
+            question: "Quelles fonctionalitées vont être supportés?",
+            answer: "Le but serait de suivre l'ouverture et la position des yeux, et une forme de dilatation des pupilles. Une lontaine inspiration de ce projet serait d'avoir une sorte de rendu fovéal parceque c'est cool et n'importe quel amélioration de performence en VR est le bienvenu.",
             hyper_link: "",
             link_description: "",
         },
         {
-            question: "When will this be completed?",
-            answer: "When it's done 😉 I have a semi busy life so development may slow and speed up inconsistently.",
+            question: "Quand est-ce que ça sera terminé?",
+            answer: "Quand ça sera terminé 😉 J'ai une vie un peu remplie donc le développement peut être lent ou rapide en conséquence de façon imprévisible.",
             hyper_link: "",
             link_description: "",
         },
         {
-            question: "Will IR damage my eyes?",
-            answer: "This project has safety in mind. If you do all of the safety measures that we put into place and visually test the amount of IR light you will be fine. Please note we have not finished development of all safety stuff so be careful.",
+            question: "Est-ce que les infrarouges vont faire des dégars sur mes yeux?",
+            answer: "Ce projet à été construit avec la sûreté en temps que pillier. Si vous avez toutes les mesures de sécurité en place et que la quantité d'infrarouges que vous observez avec une caméra à l'air sûr, tout devrait bien aller. Merci de vous rappeler que le développement n'est pas fini et qu'il vaut mieux être précautionneux.",
             hyper_link: "https://dammedia.osram.info/media/bin/osram-dam-2496608/AN002_Details%20on%20photobiological%20safety%20of%20LED%20light%20sources.pdf",
             link_description: " here is a pdf with safety information",
         },
         {
-            question: "How expensive will this be?",
-            answer: "My goal is to keep it as cheap as possible with around $75 as the absolute max, with current setups being around $25-40. aaaa",
+            question: "Combien ça coûte?",
+            answer: "Mon but est de garder le prix le plus bas possible avec $75 comme grand maximum, le matériel actuel côute aux alentours de $25 à $40. aaaa",
             hyper_link: "",
             link_description: ""
         },
         {
-            question: "How do I set up my avatar?",
-            answer: "Check out the VR Chat face tracking wiki on our github. Keep in mind that we currently only support float parameters. ",
+            question: "Comment est-ce que j'adapte mon avatar?",
+            answer: "Regardez le wiki de VRChat face tracking sur notre github. VEuillez noter que l'on supporte uniquement les parametres float. ",
             hyper_link: "",
             link_description: ""
         },
         {
-            question: "What hardware does this use / How do I build?",
-            answer: "Testing is still being done to validate our current hardware choice, no hardware has been fully confirmed therefore I cannot recommend you buy parts and assemble one yourself unless you are good with losing money and are going to be actively contributing to the project. This stands true still as of 5/3.",
+            question: "Quel est le matériel existant utilise et comment est-ce que je construit le tout?",
+            answer: "Des tests sont en train d'être fait pour valider nos choix matériels actuels, pas de matériel n'a encore été totalement confirmé c'est pour ça que je ne peux pas recommander d'aacheter des pièces et de l'asembler vous même si vous n'êtes pas parti pour contribuer au projet et perdre un peu d'argent dans le procésus. ceci est toujours valide.",
             hyper_link: "",
             link_description: ""
         },
         {
-            question: "Where are the docs?",
-            answer: "All of our documentation is located on this website, all future documentation will be found here as well.",
+            question: "où est la doccumentation?",
+            answer: "Toute notre doccumentation est rasemblé sur ce site internet, toute future doccumentation se trouvera également ici.",
             hyper_link: "",
             link_description: "",
         }
