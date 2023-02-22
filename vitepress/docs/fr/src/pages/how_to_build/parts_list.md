@@ -105,6 +105,10 @@ Si vous êtes une membre de mon Patreon vous aurez un code de réduction disponi
 
 - 1x Fer à souder et soudure (soudure sans plomb hautement recommandé) Fer à souder générique vennant de [AliExpress ici](https://www.aliexpress.com/item/3256801448141079.html) ou d'[Amazon ici](https://www.amazon.com/Liouhoum-Auto-Sleep-Adjustable-Temperature-Thermostatic/dp/B08PZBPXLZ/ref=sr_1_9)//
 
+## Attahces/montures imprimées en 3D
+
+Les montures et attaches avec un  à côté d'eux sont recommandés pour son casque respectif. Ceci est basé sur des retours de la communauté pour vous indiquer ce qui marches le mieux pour la plupart des personnes.
+
 <PartsList />
 
 ### Autre casques

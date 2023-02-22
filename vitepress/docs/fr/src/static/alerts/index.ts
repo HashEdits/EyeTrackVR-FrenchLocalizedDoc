@@ -7,7 +7,7 @@ const alerts = {
         badge_content: 'ATTENTION'
     },
     led_power_warning: {
-        type: 'danger',
+        type: 'warning',
         title: 'Merci de faire attention',
         title_color: 'text-[#b63a61] dark:text-[#ea4b7d]',
         text_color: 'text-orange-400 dark:text-orange-500',

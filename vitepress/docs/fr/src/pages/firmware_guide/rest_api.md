@@ -1,81 +1,93 @@
-# REST API {.text-[#ab5ac7]}
+# API de REST {.text-[#ab5ac7]}
 
-## What is it?
+## Qu'est-ce que c'est?
 
-A REST API is a way to communicate with the ESP devices using HTTP requests. This is useful if you want to control the device from a computer or a mobile device.
+Un API de RESET est un moyen de communiquer avec vos appareils ESP en utilisant des requêtes HTTP. Ceci est utile si vous voulez contrôler votre appareil depuis un ordinateir ou un appareil mobile.
 
-We developed a REST API for this project so that we can control the devices more easily from our new app.
+Nous avons développer un API de RESET pour ce projet afin de pouvoir contrôler les appareils plus facilement depuis notre nouvelle app.
 
-## How to use it
+## Comment l'utiliser
 
-### REST API Client
+### Client de l'API de REST
 
-Any REST API client can be used to communicate with the ESP devices. We recommend using [Thunder Client](https://www.thunderclient.com/) to test the REST API, as it's free and is a vscode extension.
+N'importe quel client de API de RESET peut être utiliser pour communiquer avec vos appareils ESP. On recommande d'utiliser le [Thunder Client](https://www.thunderclient.com/) pour tester l'API de RESET, c'est une extension de vscode et il est totalement gratuit.
 
-For basic `GET` requests, you can use your browser of choice.
+Pour les requêtes basiques de type `GET`, vous pouvez utiliser n'importe quel navigateur de votre choix.
 
 ### Standard
 
-The REST API follows the following standard:
+L'API de RESET suis le standard suivant:
 
 ```
 http://{device_name}.local:81/control/command/{endpoint}?{param}={value}&{param}={value}
 ```
 
-> For example, if the name of the device is `esp32`, you can connect to the device using `http://esp32.local:81/control/command/<endpoint>`.
+> Par exemple, si le nom de votre appareil est `esp32`, vous pouvez vous y connecter en utilisant `http://esp32.local:81/control/command/<endpoint>`.
 
 ### Endpoints
 
-The REST API has the following endpoints:
+::: info Note
+N'importe quel endpoint marqué avec `**` n'est pas encore implémenté, et sera implémenté à l'avenir.
+
+Si vous voulez nous aider à implémenter ces endpoints, merci de nous contacter.
+
+Nous sommes également ouvert aux suggestions afin d'implémenter de nouveaux endpoints.
+
+> **Note**: n'importe quel endpoint qui changes des choses dans le fichier de configuration aura besoin d'appeler `/save` pour écrire les changements dans la mémoire flash.
+> Cela préviendra le fait d'écrire dans la mémoire flash trop souvent, ce qui peut endomager la mémoire plus rapidement.
+> Cet appareil aura à écrire les changements dans la mémoire flash et se redémarer après un appel `/save`.
+:::
+
+L'API de REST utilise les endpoints suivant:
 
 | Endpoint | Method | Description |
 | :------: | :----: | :---------: |
-| /ping | GET | Returns the status of the device. |
-| /save | GET | Writes any changes to the flash. |
-| /restartDevice | GET | Restarts the ESP itself. |
-| /restartCamera | GET | Restarts the camera. |
-| /resetConfig | GET | Clears the current config in memory and RAM |
-| /getStoredConfig | GET | Returns a _JSON_ object of the devices current config. |
-| /setTxPower | POST | Sets the Transmission Power of the ESPs |
-| /setDevice | POST | Sets the `OTA` and `mDNS` settings |
-| /setCamera | POST | Sets all of the wifi settings |
-| /wifi | POST | Adds a new wifi network, or writes over an existing one |
-| /wifi | DELETE | Deletes a wifi network |
-| /wifi | GET | Returns a _JSON_ object of all of the wifi networks |
+| /ping | GET | Returnes le statut de l'appareil. |
+| /save | GET | Écrit n'importe quel changements effectué dans la mémoire flash. |
+| /restartDevice | GET | Redémares l'ESP d'elle même. |
+| /restartCamera | GET | Redémares la camera. |
+| /resetConfig | GET | Vides la config actuelle de la mémoire et RAM |
+| /getStoredConfig | GET | Retournes un objet _JSON_ de la config actuelle de l'appareil. |
+| /setTxPower | POST | Affectes la puissance de la transmission émise de l'ESP |
+| /setDevice | POST | Affectes les paramètres `OTA` et `mDNS` |
+| /setCamera | POST | Changes tout les paramètres wifi |
+| /wifi | POST | ajoutes un nouveau réseau wifi, ou remplaces le réseau déjà existant |
+| /wifi | DELETE | Supprimes un réseau wifi |
+| /wifi | GET | Retournes un objet _JSON_ avec tout les identifiants wifi |
 
 ### Params
 
-The REST API has the following params:
+L'API de REST utilise les paramètres suivant:
 
-::: danger Feature not a bug
-All params for a given URL are required, even if you are not changing that params value.
+::: danger Fonctionalité pas un bug
+Tout les paramètres pour un URL donné sont requis, même si vous ne changez pas la valeur des paramètres.
 
-If you do not supply a param, that param will be set to default settings.
+Si vous ne donnez pas un paramètre, ce paramètre sera remis à sa valeur par défaut.
 :::
 
-URL params are passed in the URL as a query string, using the following format:
+les paramètres URL sont passé comme string en utilisant le format suivant:
 
-`http://<device_name>.local:81/control/command/<endpoint>?<param>=<value>&<param>=<value>`
+`http://<device_name>.local:81/control/builtin/command/<endpoint>?<param>=<value>&<param>=<value>`
 
 #### /wifi
 
 ::: info Note
-We allow you to store up to 3 wifi networks in memory. If you try to add more than 3, the oldest network will be overwritten.
+Nous vous permettons de stocker j'usqu'a 3 réseaux wifi dans la mémoire. Si vous essayer d'en ajouter plus de 3, le réseau le plus ancien sera écrasé.
 :::
 
 | Param | Description |
 | :---: | :---------: |
-| `ssid` | The ssid of the network. |
-| `password` | The password of the network. |
-| `networkName` | The unique name (given by you) to refer to that network in memory. |
-| `channel` | The channel for the wifi network to broadcast on <br /> only `1 - 14` are allowed. |
-| `power` | The Transmittion power of the ESP for that network config. |
-| `adhoc` | Whether to enable AP mode or not. |
+| `ssid` | Le ssid du réseau. |
+| `password` | Le mot de passe du réseau. |
+| `networkName` | Un nom unique (que vous lui donner) afin d'identifier un réseau dans la mémoire. |
+| `channel` | Le canal du réseau wifi <br /> uniquement les caneaux de `1 - 14` sont autorisés. |
+| `power` | La puissance de la transmission de votre ESP pour ce réseau. |
+| `adhoc` | Si vous voulez activer le mode AP ou non. |
 
-::: info Note - Transmission Power
-You must follow the following format for the `power` param:
+::: info Note - puissance de la transmission
+Vous devez suivre le format suivant pour le paramètre `power`:
 
-Using the following enum, you pass the _number_ to the right of the `=` sign that corresponds with the power in `dBm` that you wish to use.
+En utilisant l'énumération suivant, vosu passez le _nombre_ à droite du signe `=` qui correspond à la puissance en `dBm` que vous voulez utiliser.
 
 ```cpp
 typedef enum {
@@ -100,18 +112,18 @@ typedef enum {
 
 | Param | Description |
 | :---: | :---------: |
-| `hostname` | The hostname for the ESP <br /> used by `OTA` and `mDNS`. |
-| `service` | The service to look for when scanning `mDNS` devices on the network <br /> this should be set to `openiristracker` in order to look for `EyeTrackVR` devices  |
-| `ota_password` | The password for the `OTA` service. |
-| `ota_port` | The port for the `OTA` service. |
-| `firmware_name` | The name of the binary file for `OTA` <br /> depricated and will be removed |
+| `hostname` | Le nom d'hôte pour votre ESP <br /> utilisé par `OTA` et `mDNS`. |
+| `service` | Le service que l'on doit chercher quand on scannes les appareils `mDNS` sur un réseau <br /> ceci devrait être mis sur `openiristracker` afin de trouver les appareils `EyeTrackVR`  |
+| `ota_password` | le mot de passe pour le service `OTA`. |
+| `ota_port` | Le port pour le service `OTA`. |
+| `firmware_name` | le nom du fichier binnaire `OTA` <br /> depricated and will be removed |
 
 #### /setTxPower
 
 ::: info Note
-You must follow the following format for the `txPower` param:
+Vous devez suivre le format suivant pour le paramètre `txPower`:
 
-Using the following enum, you pass the _number_ to the right of the `=` sign.
+En utilisant l'énumération suivant, vosu passez le _nombre_ à droite du signe `=`:
 
 ```cpp
 typedef enum {
@@ -134,10 +146,10 @@ typedef enum {
 
 | Param | Description |
 | :---: | :---------: |
-| `txPower` | The power level to set. |
+| `txPower` | La puissance à mettre. |
 
-### Camera Params
+### Params Camera
 
 ::: tip Coming Soon
-We are currently working on this section of documentation.
+Nous sommes en train de travailler sur cette section de la doccumentation.
 :::

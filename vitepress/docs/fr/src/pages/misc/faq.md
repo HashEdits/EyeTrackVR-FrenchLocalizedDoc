@@ -2,7 +2,7 @@
 import FAQ from '../../vue/faq/FAQ.vue'
 </script>
 
-# Frequently Asked Questions {.text-[#ab5ac7]}
+# Foire aux questions {.text-[#ab5ac7]}
 
 <br>
 

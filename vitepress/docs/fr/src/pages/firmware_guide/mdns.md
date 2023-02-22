@@ -1,47 +1,45 @@
 # MDNS {.text-[#ab5ac7]}
 
-## What is it?
+## Qu'est-ce que c'est?
 
-`mDNS` is a protocol that allows you to connect to a device using a name instead of an IP address. This is useful if you do not know the IP address of the device, or if you do not want to keep track of the IP address of the device. This is also useful if you are using a device that does not have a static IP address.
+`mDNS` est un protocole qui vous permet de vous connecter à un appareil avec un nom plutôt qu'avec une adresse IP. Ceci est très utile quand on ne connais pas l'adresse IP d'un appareil, ou que l'on ne veut pas avoir à faire attention à l'adresse IP de l'appareil. C'est également super utile lorcequ'on utilise un adressage d'IP dynamique.
 
-In the `mDNS` protocol the IP address of the device can change, but the name of the device will always be the same. This means that you can connect to the device using the name of the device, even if the IP address of the device changes.
+Dans le protocole `mDNS` l'adresse IP de l'appareil peut changer, mais le nom de l'appareil sera toujours le même. Ça veut dire que vous pouvez vous connecter à un appareil en utilisant son nom, même si l'adresse IP de l'appareil change.
 
-The name of the device is the name of the device followed by `.local`. For example, if the name of the device is `esp32`, you can connect to the device using `http://esp32.local`.
+## Comment l'utiliser
 
-## How to use it
+### Activer mDNS
 
-### Enable mDNS
+`mDNS` est activé par défault dans le nouveau firmware, et peut être désactivé.
 
-The `mDNS` is enabled by default on the new firmware, and can not be disabled.
+Pour l'utiliser, vous n'avez qu'a donner un nom à votre appareil dans le fichier de configuration du firmware.
 
-To use it,all you need to do is set the name of the device in the `platformio.ini` file.
-
-This setting can be located under the `[wifi]` section of the `platformio.ini` file.
+Cette option peut être trouvé dans la section `[wifi]` du fichier `ini/user_config.ini`.
 
 ```ini
 mdnsname = "openiristracker" # do not add .local
 ```
 
-By default, the name of the device is `openiristracker`, however you can change it to whatever you want.
+Par défaut, le nom de l'appareil est `openiristracker`, cependant vous pouvez le changer par ce que vous voulez.
 
-::: warning Change the name
-Since you have two ESP32 devices, you need to make sure that the name of the device is different for each device. If you do not change the name of the device, you will not be able to connect to both devices at the same time.
+::: warning Chnager le nom
+Vu que vous avez deux ESP32, vous devez faire attention que le nom des deux ESP soit uniques et différent de l'autre. Si vous ne changez pas le nom des appareils vous ne pourrez pas vous connecter aux deux appareils en même temps.
 :::
 
-### Connect to the device
+### Se conecter à l'appareil
 
-To connect to the device, you need to use the name of the device followed by `.local`. For example, if the name of the device is `esp32`, you can connect to the device using `http://esp32.local`.
+Pour vous connecter à votre appareil, vous devez utiliser le nom de lappareil suivi de `.local`. Par exemple, si le nom de votre appareil est `esp32`, vous pourrez vous y connecter en utilisant `http://esp32.local`.
 
-## Prerequisites `Bonjour`
+## Prérequis `Bonjour`
 
-`Bonjour` is required to use the `mDNS` protocol _for windows and mac only_. If you are using Windows, you can download Bonjour from [here](https://support.apple.com/kb/DL999?locale=en_US). If you are using macOS, Bonjour is already installed.
+`Bonjour` est requis pour utiliser le protocole `mDNS` _sur windows et mac uniquement_. Si vous êtes sur Windows, vous pouvez télécharger Bonjour [ici](https://support.apple.com/kb/DL999?locale=en_US). Si vous utilisez macOS, Bonjour est déjà installé.
 
-You can also get the fully tested Bonjour package from us [here](https://github.com/RedHawk989/EyeTrackVR/tree/GUI/GUI/assets/3rdParty) (for Windows only).
+Vous pouvez également récupèrer un package totalement testé [ici](https://github.com/RedHawk989/EyeTrackVR/tree/GUI/GUI/assets/3rdParty) (pour Windows uniquement).
 
-## Troubleshooting
+## Dépanage
 
-### Can not connect to the device
+### Vous ne pouvez pas vous connecter à votre appareil
 
-If you can not connect to the device, make sure that the name of the device is correct. If the name of the device is correct, make sure that the device is connected to the network.
+Si vous ne pouvez pas vous connecter à votre appareil, veuillez vérifier que le nom de l'appareil est correct. Si le nom est correct, vérifiez qu'il est connecté sur le même réseau que votre ordinateur.
 
-If the device is connected to the network, try to restart the device. If the device is still not connected, try to restart the router.
+Si votre appareil est connecté sur le même réseau, essayez de redémarer l'appareil. Si l'appareil n'est toujours pas connecté, essayez de redémarer votre routeur.
