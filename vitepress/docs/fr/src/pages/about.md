@@ -23,7 +23,7 @@ import { members, contributors } from '../static/members'
       L'équipe de dévelopement de EyeTrackVR est gèré par une équipe internationale,
       quelque d'entre eux ont été choisis d'être mis en avant ci-dessous.<br>
         <br>
-      Les développeurs de EyetrackVR sont un groupe de personnes qui sont passionés par les domaines de la réalité cirtuelle et augmanté.
+      Les développeurs de EyetrackVR sont un groupe de personnes qui sont passionés par les domaines de la réalité virtuelle et augmanté.
     </template>
   </VPTeamPageTitle>
   <VPTeamMembers
@@ -38,7 +38,7 @@ import { members, contributors } from '../static/members'
     </template>
   </VPTeamPageSection>
   <VPTeamPageSection>
-    <template #title>Phylosophie</template>
+    <template #title>Philosophie</template>
     <template #lead>
         Les <a class="custom-links" href="/intro" target="_blank">guides</a> sur ce site contient des notes de notre propre équipe 
         (pas toutes aussi soignés que les autres) que l'on donnes pour que d'autres personnes puisses les utiliser<br>

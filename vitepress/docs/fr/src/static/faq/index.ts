@@ -2,7 +2,7 @@ const faq = {
     faq: [
         {
             question: "Quel est le but de ce projet?",
-            answer: "De prodiguer un système de suivi des yeux, Open source, abordable pour les jeux sociaux VR tel que VRChat, en plus de créer une plateforme de suivid des yeux ouverte.",
+            answer: "De créer un système de suivi des yeux, Open source, abordable pour les jeux sociaux VR tel que VRChat, en plus de créer une plateforme de suivi des yeux ouverte.",
             hyper_link: "",
             link_description: "",
         },
@@ -20,13 +20,13 @@ const faq = {
         },
         {
             question: "Quelles fonctionalitées vont être supportés?",
-            answer: "Le but serait de suivre l'ouverture et la position des yeux, et une forme de dilatation des pupilles. Une lontaine inspiration de ce projet serait d'avoir une sorte de rendu fovéal parceque c'est cool et n'importe quel amélioration de performence en VR est le bienvenu.",
+            answer: "Le but serait de suivre l'ouverture et la position des yeux, et une forme de dilatation des pupilles. Une lontaine inspiration de ce projet serait d'avoir une sorte de rendu fovéal, parceque c'est cool et n'importe quelle amélioration de performence en VR est la bienvenue.",
             hyper_link: "",
             link_description: "",
         },
         {
             question: "Quand est-ce que ça sera terminé?",
-            answer: "Quand ça sera terminé 😉 J'ai une vie un peu remplie donc le développement peut être lent ou rapide en conséquence de façon imprévisible.",
+            answer: "Quand ça sera finis 😉 J'ai une vie un peu remplie donc le développement peut être lent ou rapide en conséquence de façon imprévisible.",
             hyper_link: "",
             link_description: "",
         },
@@ -44,18 +44,18 @@ const faq = {
         },
         {
             question: "Comment est-ce que j'adapte mon avatar?",
-            answer: "Regardez le wiki de VRChat face tracking sur notre github. VEuillez noter que l'on supporte uniquement les parametres float. ",
+            answer: "Regardez le tutoriel vidéo dans la section Divers ou vous réfèrez vous au wiki de VRChat face tracking sur github. Veuillez noter que l'on supporte uniquement les parametres float.",
             hyper_link: "",
             link_description: ""
         },
         {
             question: "Quel est le matériel existant utilise et comment est-ce que je construit le tout?",
-            answer: "Des tests sont en train d'être fait pour valider nos choix matériels actuels, pas de matériel n'a encore été totalement confirmé c'est pour ça que je ne peux pas recommander d'aacheter des pièces et de l'asembler vous même si vous n'êtes pas parti pour contribuer au projet et perdre un peu d'argent dans le procésus. ceci est toujours valide.",
+            answer: "Des tests sont en train d'être fait pour valider nos choix matériels actuels, pas de matériel n'a encore été totalement confirmé c'est pour ça que je ne peux pas recommander d'aacheter des pièces et de l'assembler vous même si vous n'êtes pas parti pour contribuer au projet et perdre un peu d'argent dans le procésus. ceci est toujours valide.",
             hyper_link: "",
             link_description: ""
         },
         {
-            question: "où est la doccumentation?",
+            question: "Où est la doccumentation?",
             answer: "Toute notre doccumentation est rasemblé sur ce site internet, toute future doccumentation se trouvera également ici.",
             hyper_link: "",
             link_description: "",

@@ -7,43 +7,43 @@ import { alerts } from '../../static/alerts'
 import { Requirements } from '../../static/app_build_requirements'
 </script>
 
-# Build the app from source {.text-[#ab5ac7]}
+# COnstruire l'app depuis la source {.text-[#ab5ac7]}
 
-## This guide will show how to build the app from source
+## CE guide va vous montrer comment construire l'application depuis la source
 
 <Alerts :options="alerts.build_software_one">
     <template v-slot:content>
         <p>
-           This is NOT a required step, you do not need to build the app from source.
+           Ceci n'est pas une étape requise, vous n'avez pas besoin de construire l'application depuis la source.
         </p>
     </template>
 </Alerts>
 
-## Requirements
+## Prérequis
 
 <CheckList :options="{...Requirements}"/>
 
-## Install Python
+## Installer Python
 
-EyetrackVR is currently using [Python 3.11.0](https://www.python.org/downloads/release/python-3110/) Before you continue, please install it.
+EyetrackVR utilises [Python 3.11.0](https://www.python.org/downloads/release/python-3110/) pour l'instant, avant de continuer merci de l'installer avant de continuer.
 
-## Installing Poetry
+## Installer Poetry
 
-Since version `0.1.7` of EyeTrackVR, we have been using Poetry to manage app dependencies. To build the app, you must first install Poetry to fetch the required dependencies.
+Depuis la version `0.1.7` d'EyeTrackVR, nous avons utilié Poetry pour gèréer les dépendences de l'application. Pour construire l'application, vous devez premièrement installer Poetry et aller chercher les dépendences.
 
-To install Poetry open Windows Powershell and run the following command `(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -`
+Pour installer Poetry ouvrez Windows Powershell et lancez les commandes suivantes `(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -`
 
-[Poetry Documentation](https://python-poetry.org/docs/)
+[Documentation de Poetry](https://python-poetry.org/docs/)
 
-## Install the required Python modules
+## Installer les modules Python requis
 
-After cloning the project and installing Poetry, open a command prompt in the EyeTrackApp folder. Then run the command: `poetry install`
+Après avoir clonné le projet et installé Poetry, ouvrez un invité de commandes dans le dossier EyeTrackApp. Et lancez cette commande: `poetry install`
 
-This should install all of the required modules.
+Çela devrait installer tout les modules requis.
 
-## Build the app
+## Construire l'application
 
-Now, you should be ready to build the app.
-With a command prompt open in the EyeTrackApp folder, run the command `poetry run pyinstaller eyetrackapp.spec`
+Maintenant vous devriez être prêt à construire l'application.
+Dans un invité de commandes ouver dans le dossier EyeTrackApp, lancez la commande `poetry run pyinstaller eyetrackapp.spec`
 
-Give it time to build the app. Once done, the app should be under `dist/eyetrackapp`
+Laissez lui du temps de construire l'application. une fois finis, l'application devrait se trouver dans `dist/eyetrackapp`

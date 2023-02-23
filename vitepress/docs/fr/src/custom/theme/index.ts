@@ -25,52 +25,52 @@ const theme = {
     ],
     sidebar: [
         {
-            text: "Getting Started",
+            text: "Se lancer",
             collapsible: true,
             items: [
                 { text: "Introduction", link: "/getting_started/intro" },
-                { text: "Things to know before you start", link: "/getting_started/things_to_know" },
+                { text: "Choses à savoir avant de commencer", link: "/getting_started/things_to_know" },
             ],
         },
         {
-            text: "How to Build",
+            text: "Comment construire",
             collapsible: true,
             items: [
-                { text: "Full Build Guide", link: "/how_to_build/full_build" },
-                { text: "Part List", link: "/how_to_build/parts_list" },
-                { text: "How to Create your own Camera Mount", link: "/how_to_build/creating_your_own_mount" },
+                { text: "Guide d'assembleage complet", link: "/how_to_build/full_build" },
+                { text: "liste des pièces", link: "/how_to_build/parts_list" },
+                { text: "Comment créer vos propres montures et attachements", link: "/how_to_build/creating_your_own_mount" },
             ],
         },
         {
-            text: "Firmware Guide",
+            text: "Guide Firmware",
             collapsible: true,
             items: [
                 { text: "Introduction", link: "/firmware_guide/firmware" },
-                { text: "Setup Visual Studio Code environment", link: "/firmware_guide/setup_vscode" },
-                { text: "Configuring Firmware", link: "/firmware_guide/configure_firmware" },
-                { text: "Upload Firmare", link: "/firmware_guide/upload_firmware" },
+                { text: "Mettre en place l'environement Visual Studio Code", link: "/firmware_guide/setup_vscode" },
+                { text: "Configurer le Firmware", link: "/firmware_guide/configure_firmware" },
+                { text: "téléverser le Firmare", link: "/firmware_guide/upload_firmware" },
                 { text: "MDNS", link: "/firmware_guide/mdns" },
-                { text: "REST API", link: "/firmware_guide/rest_api" },
+                { text: "API de REST", link: "/firmware_guide/rest_api" },
             ],
         },
         {
-            text: "Software Guide",
+            text: "Guide Logiciel",
             collapsible: true,
             items: [
-                { text: "Installing and setting up the ETVR App", link: "/software_guide/eyetrackvr_app_guide" },
-                { text: "Building the app from source", link: "/software_guide/build_software" },
+                { text: "Installer et mettre en place l'app ETVR", link: "/software_guide/eyetrackvr_app_guide" },
+                { text: "Construire l'app depuis la source", link: "/software_guide/build_software" },
             ],
         },
         {
-            text: "Miscellaneous",
+            text: "Divers",
             collapsible: true,
             items: [
-                { text: "VR Chat Avatar Setup", link: "/misc/vrc_avatar_setup" },
+                { text: "Mise en place de votre avatar VRChat", link: "/misc/vrc_avatar_setup" },
                 { text: "FAQ", link: "/misc/faq" },
             ],
         },
         {
-            text: "Development",
+            text: "Développement",
             collapsible: true,
             items: [
                 { text: "Docs", link: "/development/docs/dev_docs" },
@@ -80,7 +80,7 @@ const theme = {
             text: "Archive",
             collapsible: true,
             items: [
-                { text: "Prepare to solder IR LED PCB V2's", link: "/archive/fox_ir_v2_build_instructions" },
+                { text: "Préparer la soudure des PCB infrarouge V2P", link: "/archive/fox_ir_v2_build_instructions" },
             ],
         },
     ],

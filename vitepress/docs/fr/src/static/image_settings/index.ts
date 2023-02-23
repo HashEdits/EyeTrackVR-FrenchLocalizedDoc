@@ -8,39 +8,39 @@ const image_settings = {
     discord_content: {
         url: "https://discord.com/api/guilds/946212245187199026/widget.png?style=banner3",
         url_2: "https://discord.gg/kkXYbVykZX",
-        alt: "'discord banner'",
+        alt: "'Banière discord'",
         max_width: "max-width: 400px;"
     },
     external_antenna: {
         url: "https://i.imgur.com/OzpxFMD.png",
-        alt: "'img of external antenna'",
+        alt: "'img d'une antenne externe'",
         caption: "Immage venant de: ",
         caption_link: "https://randomnerdtutorials.com/esp32-cam-connect-external-antenna",
         max_width: "max-width: 400px;"
     },
     external_antenna_resistors: {
         url: "https://i.imgur.com/RIFpNqW.jpg",
-        alt: "'img of external antenna resistors'",
+        alt: "'img des résistances de l'antenne externe'",
         max_width: "max-width: 400px;"
     },
     camera_socket: {
         url: "https://i.imgur.com/T5asLGN.jpg",
-        alt: "'img of camera socket'",
+        alt: "'img du socket caméra'",
         max_width: "max-width: 400px;"
     },
     camera_socket_clip: {
         url: "https://i.imgur.com/Z8b8Sin.jpg",
-        alt: "'img of camera clip'",
+        alt: "'img d'un clip caméra'",
         max_width: "max-width: 400px;"
     },
     camera_cable: {
         url: "https://i.imgur.com/dDBIi9j.jpg",
-        alt: "'img of camera cable'",
+        alt: "'img d'un câble caméra'",
         max_width: "max-width: 400px;"
     },
     camera_clip_close: {
         url: "https://i.imgur.com/VnFi5XS.jpg",
-        alt: "'img of camera cable'",
+        alt: "'img d'un câble caméra'",
         max_width: "max-width: 400px;"
     },
     _7_12_one: {
@@ -214,12 +214,12 @@ const image_settings = {
     },
     upload_firmware_image_one: {
         url: "https://i.imgur.com/dSPSpkY.png",
-        alt: "'platformio serial monitor button'",
+        alt: "'bouton moniteur série de platformio'",
         max_width: "max-width: 500px;"
     },
     upload_firmware_image_two: {
         url: "https://i.imgur.com/PoHP3NC.png",
-        alt: "'img of platformio serial monitor'",
+        alt: "'img du moniteur série de platformio'",
         max_width: "max-width: 600px;"
     },
     setup_vscode_image_one: {
@@ -285,13 +285,13 @@ const image_settings = {
     eyetrack_vr_guide_four: {
         url: "https://i.imgur.com/MJb2h74.png",
         alt: "'img'",
-        caption: "See the Awating Eye Cropping Settings text?",
+        caption: "Voyez le texte de l'option Awating Eye Cropping?",
         max_width: "max-width: 500px;"
     },
     eyetrack_vr_guide_five: {
         url: "https://i.imgur.com/1pNYITS.png",
         alt: "'img'",
-        caption: ":O It's my eye!",
+        caption: ":O c'est mon œil!",
         max_width: "max-width: 500px;"
     },
     eyetrack_vr_guide_six: {
@@ -302,37 +302,37 @@ const image_settings = {
     eyetrack_vr_guide_seven: {
         url: "https://i.imgur.com/xXTB3sM.png",
         alt: "'img'",
-        caption: "It's crooked!",
+        caption: "Il est de traviole!",
         max_width: "max-width: 500px;"
     },
     eyetrack_vr_guide_eight: {
         url: "https://i.imgur.com/blsrpCX.png",
         alt: "'img'",
-        caption: "Much better!",
+        caption: "Bien mieux!",
         max_width: "max-width: 500px;"
     },
     eyetrack_vr_guide_nine: {
         url: "https://i.imgur.com/30fFadH.png",
         alt: "'img'",
-        caption: "Much better!",
+        caption: "Bien mieux!",
         max_width: "max-width: 500px;"
     },
     eyetrack_vr_guide_ten: {
         url: "https://i.imgur.com/ZjpKfCV.png",
         alt: "'img'",
-        caption: "Much better!",
+        caption: "Bien mieux!",
         max_width: "max-width: 500px;"
     },
     eyetrack_vr_guide_eleven: {
         url: "https://i.imgur.com/KPUn8S1.png",
         alt: "'img'",
-        caption: "Much better!",
+        caption: "Bien mieux!",
         max_width: "max-width: 500px;"
     },
     fox_ir_build_instructions_one: {
         url: "https://i.imgur.com/WyoVdcR.jpg",
         alt: "'img'",
-        caption: "698ohm resistors and V2 PCBs",
+        caption: "résistance de 698ohm et PCBs V2",
         max_width: "max-width: 400px;"
     },
     fox_ir_build_instructions_two: {
@@ -344,7 +344,7 @@ const image_settings = {
     fox_ir_build_instructions_three: {
         url: "https://i.imgur.com/Ap8OAWY.png",
         alt: "'img'",
-        caption: "The green markings and notched corners mark the positive sides of the LEDs pictured above.",
+        caption: "Les marques vertes et l'encoche sur le paquet indiquent la cathode des LEDs ci-dessus.",
         max_width: "max-width: 400px;"
     },
     fox_ir_build_instructions_four: {
@@ -390,12 +390,12 @@ const image_settings = {
     fox_ir_build_instructions_twelve: {
         url: "https://i.imgur.com/SvbHAuY.jpg",
         alt: "'img'",
-        caption: "The LED is flipped in this Image, the green dot should face AWAY from the PCB.",
+        caption: "LED inversé dans cette image, l'encoche verte doit NE DOIT PAS faire face au PCB.",
         max_width: "max-width: 400px;"
     },
     fox_ir_build_instructions_thirteen: {
         url: "https://i.imgur.com/gopjVG3.png",
-        alt: "'drawing'",
+        alt: "'dessin'",
         max_width: "max-width: 500px;"
     },
 };

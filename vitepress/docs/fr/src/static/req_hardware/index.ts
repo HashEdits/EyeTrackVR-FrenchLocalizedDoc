@@ -11,7 +11,7 @@ const RequiredHardware: IDevRoadMap = {
         {label: "Câble de calibres plus petit pour alimenter les ESP"},
         {label: "Câble de plus gros calibre pour alimenter les LEDs infrarouges"},
         {label: "Une imprimante 3D pour imprimer les fixations/montures. (utiliser des sites comme JLCPCB peut également être une option)"},
-        {label: "De la colle, pistolet à colle fotement recommandé"},
+        {label: "De la colle, pistolet à colle fortement recommandé"},
     ]
 }
 

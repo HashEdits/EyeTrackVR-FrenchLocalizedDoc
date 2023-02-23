@@ -7,95 +7,95 @@ import { alerts } from '../../static/alerts'
 import { Requirements } from '../../static/app_build_requirements'
 </script>
 
-# How to install, run and adjust the EyeTrackVR app. {.text-[#ab5ac7]}
+# Comment installer, lancer et ajuster l'application EyeTrackVR. {.text-[#ab5ac7]}
 
-### Step 1: Download the EyeTrackVR Installer and install the EyeTrackVR app
+### Étape 1: Télécharger l'installeur EyetTrackVR et installer le programme
 
-Go to the latest [GitHub release here](https://github.com/RedHawk989/EyeTrackVR-Installer/releases/latest) and download the .zip
+Allez sur la dernière version du programme sur [GitHub ici](https://github.com/RedHawk989/EyeTrackVR-Installer/releases/latest) et téléchargez le .zip
 
-Extract the zip file and then run the .exe as administrator.
-You will be greeted with a window that looks like this:
+Extraire l'archive zip et lancer le .exe en temps qu'administrateur.
+Vous serez accueillies par une fenêtre qui resembles à ça:
 <ImageCard :options="image_settings.eyetrack_vr_guide_one"/>
 
-By default, it will install to `C:\Program Files\EyeTrackVR` and create a shortcut on your desktop.
-Pressing the `Change Install Path` button will open up a window where you can navigate to an alternate install path.
+Par défault il va s'installer dans `C:\Program Files\EyeTrackVR` et créer un racourcit sur votre bureau.
+En appuillant sur le bouton `Change Install Path` vous allez ouvrir une fenêtre où vous pouvez naviguer votre arborécense et choisir un endroit alternatif où installer l'application.
 
-Press `Install` to install the app.
+Appuillez sur `Install` pour intsaller l'application.
 <Alerts :options="alerts.eyetrack_vr_guide_one">
     <template v-slot:content>
         <p>
-           The installer can also be used to update the app, just go through the install process again.
+           L'intsalleur peut également être utilisé pour mettre à jour l'application, vous aurez juste à refaire le processus d'instalation.
         </p>
     </template>
 </Alerts>
 
-If it has been successfully installed it should change to look like this:
+Si il c'est bien installé la fenêtre devrait resembler à ça:
 <ImageCard :options="image_settings.eyetrack_vr_guide_two"/>
 
-## Step 2: Run the EyeTrackVR app
+## Étape 2: Lancer l'application EyeTrackVR
 
-If the `Create Desktop Shortcut` option was checked you should see an icon on your desktop, double click it to run.
+Si l'option `Create Desktop Shortcut` était coché vous devriez voir un icone sur votre bureau, double clickez dessus pour lancer l'application.
 
-You then should be greeted with a GUI that looks like this:
+Vous devriez être accueillies avez une interface qui resembles à ça:
 <ImageCard :options="image_settings.eyetrack_vr_guide_three"/>
 
-## Step 3: Getting familiar with settings and terminology
+## Étape 3: Familiarisez vous avec les options et terminologies
 
-Let's go over some basic terminology you will find in the app.
+Nous allons voir quelques terminologies que vous allez trouver dans l'application.
 
-Starting from the top:
+En partant d'en haut:
 
 ### `Right eye`
 
-Shows the right eye feed and settings only.
+Montres le flux et les options de l'œil droit uniquement.
 
 ### `Left eye`
 
-Shows the left eye feed and settings only.
+Montres le flux et les options de l'œil gauche uniquement.
 
 ### `Both eyes`
 
-Shows both eyes' feed and settings.
+Montres le flux et les options des deux yeux simultanément.
 
 ### `Camera Address`
 
-This is where you enter the IP address of your camera.
-Alternatively, it can be used to put the cam number for wired cameras or pass in a video file.
+C'est là où vous aller enter les adresses IP de vos caméras.
+Autrement, ce champ peut également être utilisé pour rentrer le numéro d'une caméra branché ou un fichier vidéo.
 
 ### `Tracking Mode`
 
-This changes the GUI to the tracking mode where it outputs values.
+Çela changes l'interface vers celui du mode de suivi où il sort les valeures.
 
 ### `Cropping Mode`
 
-This is where you will crop out your eye.
+C'est où vous allez tronquer votre œil.
 
 ### `Threshold`
 
-This is used to cut out things that aren't dark like your pupil.
+C'est utilisé afin de couper tout ce qui ne fait pas noir comme votre pupille.
 
 ### `Rotation`
 
-For our method to work best, you want your eye to be level.
-Use this slider to adjust it to where that is the case.
+Pour que notre méthode marches le mieux, il faut que votre œil soit perpendiculaire à la fenêtre de l'application.
+Utilisez ce slider pour ajuster la rotation de votre caméra pour que ce soit le cas.
 
 ### `Restart Calibrationn`
 
-This will start a calibration mode for your eye where you look to all extremes.
+Ceci va commencer le mode de calibration pour votre œil. Lorceque vous êtes dans ce mode regardez dans le plus loin sur tout les bords.
 
 ### `Recenter Eye`
 
-This will recenter your eye to whatever point you are looking at.
+Çela va recentrer votre œil où vous êtes en train de regarder lorsceque vous appuilez sur le bouton.
 
-## Step 4: Adding your cameras to the software and configuring them
+## Étape 4: Ajoutez vos caméras dans le logiciel et configurez les
 
-Power your ESPs and find what the IP address is for your right eye. This can be done by opening both Cameras in a browser and then holding your finger over your right eye camera.
+Allumez vos ESP et trouvez quel adresse IP est celle pour l'ESP de votre œil droit. Çela peut être fait en ouvrant les deux caméras dans un navigateur et mettre votre doit devant la caméra pour votre œil droit.
 
-Copy that IP address and then close the browser tab with it open.
+Copiez cette adresse IP et fermez la fenêtre de votre navigateur dans laquelle la vidéo était ouverte.
 
-Enter that IP address into the app's `Camera Address` field and press the `Save and Restart Tracking` button.
+Entrez cette adresse IP dans le champ `Camera Address` de l'application et cliquez sur le bouton `Save and Restart Tracking`.
 
-Don't see your camera feed? That's because we haven't set an ROI.
+Vous ne voyez pas le flux de votre caméra? C'est parceque vous n'avez pas réfinis votre région d'interêt (ROI).
 <ImageCard :options="image_settings.eyetrack_vr_guide_four"/>
 
 Now press the `Cropping Mode` button.
@@ -103,62 +103,62 @@ You should see a feed of your camera.
 
 Put your headset on and use an application to see your desktop. (Virtual desktop, SteamVR desktop, etc.)
 
-You should see something like this:
+Vous devriez voir quelque chose comme ça:
 <ImageCard :options="image_settings.eyetrack_vr_guide_five"/>
 
-Now, Draw a rectangle that selects your eye.
+Maintenant, dessinez un rectangle pour sélectionner votre œil.
 
-A good example of an ROI
+Un exemple d'un bon ROI
 <ImageCard :options="image_settings.eyetrack_vr_guide_six"/>
 
-Head back over to the `Tracking mode`.
+Retournez dans le `Tracking mode`.
 
-We will now adjust our rotation by moving the `Rotation` slider.
+Nous allons maintenant ajuster la rotation en bougeant le slider `Rotation`.
 
-From this:
+Passant de ça:
 <ImageCard :options="image_settings.eyetrack_vr_guide_seven"/>
 
-To this:
+à ceci:
 <ImageCard :options="image_settings.eyetrack_vr_guide_eight"/>
 
-Now we will adjust our threshold.
+Maintenant nous allons ajuster le seuil (threshold).
 
-Continuing with your headset on, move the slider all the way up.
-start slowly backing it off until mainly only your pupil is being visualized in the threshold viewer.
+Continuez par bouger le slider au maximum toujours avec votre casque sur la tête. 
+commencer à le faire glisser doucement j'usqu'à ce qu'uniquement votre pupille soit visible à l'interieur du visualiseur de seuil.
 
-Example of a threshold being too low:
+Un example d'un seuil bien trop bas:
 <ImageCard :options="image_settings.eyetrack_vr_guide_nine"/>
 
-Example of too high of a threshold:
+Un example d'un seuil bien trop haut:
 <ImageCard :options="image_settings.eyetrack_vr_guide_ten"/>
 
-Example of a good threshold:
+Un example d'un bon seuil:
 <ImageCard :options="image_settings.eyetrack_vr_guide_eleven"/>
 
-Repeat everything in this step for your left eye.
+Répètez toutes les instructions dans cette étape pour votre œil gauche.
 
-## Step 5: Calibrating your eyes
+## Étape 5: Calibrez vos yeux
 
-Once your eye is trackable by the software we need to calibrate it.
+Une fois que votre œil est suiveable par le logiciel nous devrons le calibrer.
 
-Press the `Restart Calibration` button and look around.
-The important part is that you look to all extremes, all the way up, left, etc.
-Once you have done so, wait for the `Mode` to say `Tracking`
+Appuillez sur le bouton`Restart Calibration` et regardez autour de vous.
+Il est important que vous regardiez aux angles plus extrêmes lors de cette étape, tout en haut, tout en bas, etc...
+Une fois que vous avez fait ça attendez que le `Mode` dises `Tracking`
 
-The next step is to center your eye.
+La prochaine étape est de centrer vos yeux.
 
-Look straight forward and press the `Recenter Eye` button.
+Regardez tout droit et appuillez sur le bouton `Recenter Eye`.
 
-Your eye is now fully calibrated.
+Votre œil est maintenant totalement calibré.
 
-Repeat for your other eye.
+Répètez pour votre autre œil.
 
 <Alerts :options="alerts.eyetrack_vr_guide_two">
     <template v-slot:content>
         <p>
-           To best center both eyes, look at one spot and hit the 'Recenter Eye' button for each eye without moving your eyes.
+           Pour mieux centrer vos deux yeux il est conseiller de cliquer sur le bouton 'Recenter Eye' pour chaque œil sans bouger vos yeux.
         </p>
     </template>
 </Alerts>
 
-## See anything outdated on this guide? Let me know! `Prohurtz#0001`
+## Vous voyeaz quelque chose qui n'est pas à jour dans ce guide? laissez moi savoir! `Prohurtz#0001`
